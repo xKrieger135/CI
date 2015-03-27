@@ -3,64 +3,64 @@ grammar miniP;
 start:
 
 	PROGRAMTOKEN
-		initialisierung
+		initialisierung*
 	BEGINTOKEN
 		programm
-	ENDTOKEN;
+ 	ENDTOKEN;
 
-initialisierung: ;
+initialisierung: (STRING|BOOLEAN|REAL|INTEGER) IDENTTOKEN(KOMMATOKEN IDENTTOKEN)* ENDLINETOKEN;
 
-programm: (anweisung | zuweisung | verzweigung | schleife)*;
+programm: (zuweisung | verzweigung | schleife)*;
 
-zuweisung: IDENTTOKEN ZUWEISUNGSTOKEN;
+zuweisung: IDENTTOKEN ZUWEISUNGSTOKEN zuweisungswert ENDLINETOKEN;
+zuweisungswert: (INTTOKEN | real | STRINGTOKEN | BOOLEANTOKEN | ergebnis);
 
+ergebnis: KLAMMERAUFTOKEN rechnung KLAMMERZUTOKEN; //ToDo Rechenoperationen richtig?
+rechnung:   punktRechnung (PLUSMINUS punktRechnung)*; 
+
+punktRechnung:   zahl (MALGETEILT zahl)*;
+zahl: INTTOKEN | real;
+
+verzweigung: IFTOKEN vergleich THENTOKEN programm (ELSETOKEN programm)? FITOKEN;
+
+vergleich: (wert | IDENTTOKEN) OPERATORENTOKEN (wert | IDENTTOKEN);
+wert: (STRINGTOKEN | zahl);
+
+schleife:	WHILETOKEN vergleich DOTOKEN programm ODTOKEN;
+
+real	:	INTTOKEN REALSEPERATOR INTTOKEN;
 
 
 // TOKEN
 
 
-PROGRAMTOKEN : 'program';
-BEGINTOKEN   : 'begin';
-ENDTOKEN     : 'end';
+PROGRAMTOKEN: 	'program';
+BEGINTOKEN: 	'begin';
+ENDTOKEN: 		'end';
+IFTOKEN:		'if';
+ELSETOKEN:		'else';
+THENTOKEN:		'then';
+FITOKEN:		'fi';
+WHILETOKEN:		'while';
+DOTOKEN	:		'do';
+ODTOKEN	:		'od';	
+ZUWEISUNGSTOKEN:	':=';
+ENDLINETOKEN:		';';
+INTTOKEN:		 PLUSMINUS? ('0'..'9')+;
+//REALTOKEN:		INTTOKEN REALSEPERATOR INTTOKEN;
+REALSEPERATOR:		'.';
+BOOLEANTOKEN: 		('true'|'false');
+STRINGTOKEN:		'(\'' (options {greedy=false;} : .)* '\')';
+PLUSMINUS:		('+'|'-');
+MALGETEILT:		('*'|'/');
+OPERATORENTOKEN:	('<'|'>'|'='|'!='|'<='|'>=');
+KLAMMERAUFTOKEN:	'(';
+KLAMMERZUTOKEN:		')';
+KOMMATOKEN:		',';	
 
+STRING	:	'string';
+BOOLEAN	:	'boolean';
+INTEGER :	'integer';
+REAL 	:	'real';
 
-// Symbole
-
-ID           : ('a'..'z' | 'A'..'Z') ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*;	
-KONSTANTEN   : INTEGER | REAL | STRING | BOOLEAN;
-INTEGER      : '+' | '-' ('0'..'9')+;		
-STRING 	     : ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*;		
-BOOLEAN      : 'true' | 'false';	
-
-// Noch richtig machen die REAL Zahl
-REAL         : ;
-
-OPERATOREN   :  ',' | ';' | ':=';
-RECHNUGSOPERATOREN  :	'+' | '-' | '*' | '/';
-
-VERGLEICHSOPERATOREN
-	:	'=' | '<>' | '<' | '>' | '<=' | '>=';
-KLAMMERAUF 
-	:	'(';
-KLAMMERZU 
-	:	')';		
-
-// Deklarationen 
-
-// Schlüsselworte
-
-WHILE 	:	'while';
-DO 	:	'do';
-OD 	:	'od';
-IF 	:	'if';
-THEN 	:	'then';
-ELSE 	:	'else';
-READ 	:	'read';
-PRINT 	:	'println';
-
-
-		
-
-
- 
-	
+IDENTTOKEN: ('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|('0'..'9')|'_')*; //Buchstaben vorne danach Buchstaben und Zahlen
