@@ -1,0 +1,54 @@
+grammar miniP;
+
+start:
+
+PROGRAMTOKEN
+initialisierung
+BEGINTOKEN
+programm
+ENDTOKEN;
+
+initialisierung: ;
+
+programm: (anweisung | zuweisung | verzweigung | schleife)*;
+
+zuweisung: IDENTTOKEN ZUWEISUNGSTOKEN zuweisungswert ENDLINETOKEN;
+zuweisungswert: (INTTOKEN | REALTOKEN | STRINGTOKEN | BOOLEANTOKEN | ergebnis);
+
+ergebnis: rechnung; //ToDo Rechenoperationen richtig?
+rechnung:   punktRechnung (PLUSMINUS punktRechnung)*; 
+
+punktRechnung:   zahl (MALGETEILT zahl)*;
+zahl: INTTOKEN | REALTOKEN;
+
+verzweigung: IFTOKEN vergleich THENTOKEN programm (ELSETOKEN programm)? FITOKEN;
+
+vergleich: (wert | ID) OPERATORENTOKEN (wert | ID);
+wert: (STRINGTOKEN | zahl);
+
+
+
+// TOKEN
+
+
+PROGRAMTOKEN: 	'program';
+BEGINTOKEN: 	'begin';
+ENDTOKEN: 		'end';
+IFTOKEN:		'if';
+ELSETOKEN:		'else';
+THENTOKEN:		'then';
+FITOKEN:		'fi';
+ZUWEISUNGSTOKEN:':=';
+ENDLINETOKEN:	';';
+INTTOKEN:		0..9+;
+REALTOKEN:		INTTOKEN REALSEPERATOR INTTOKEN;
+REALSEPERATOR:	'.';
+BOOLEANTOKEN: 	(true|false);
+STRINGTOKEN:	"'" //ToDo
+PLUSMINUS:		('+'|'-');
+MALGETEILT:		('*'|'/');
+OPERATORENTOKEN:('<'|'>'|'='|'!='|'<='|'>=');
+KLAMMERAUFTOKEN:'(';
+KLAMMERZUTOKEN:	')';
+
+IDENTTOKEN: ('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|0..9)*; //Buchstaben vorne danach Buchstaben und Zahlen
