@@ -14,7 +14,7 @@ operatorline : MATHEOPERATOR MATHEOPERATOR MATHEOPERATOR;
 
 equalline : GLEICH GLEICH GLEICH;
 
-wort: BUCHSTABEN -> WORT BUCHSTABEN;
+wort: BUCHSTABEN+ -> ^(WORT BUCHSTABEN+);
 
 all: 	wort1=wort zeichen1=MATHEOPERATOR wort2=wort GLEICH wort3=wort
 		zeichen4=MATHEOPERATOR zeichen5=MATHEOPERATOR zeichen6=MATHEOPERATOR 
@@ -29,6 +29,6 @@ all: 	wort1=wort zeichen1=MATHEOPERATOR wort2=wort GLEICH wort3=wort
 						^(GLEICH ^($zeichen3 $wort2 $wort5) $wort8) 
 						^(GLEICH ^($zeichen4 $wort3 $wort6) $wort9));
 		
-BUCHSTABEN : ('A'..'Z')+;
+BUCHSTABEN : ('A'..'Z');
 MATHEOPERATOR :	'+' | '-';
 GLEICH 	: '=';
