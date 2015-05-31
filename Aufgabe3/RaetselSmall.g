@@ -9,18 +9,18 @@ tokens{
 
 start : all;
 old: zeile operatorline! zeile equalline! zeile;
-zeile  : BUCHSTABEN MATHEOPERATOR BUCHSTABEN GLEICH BUCHSTABEN -> GLEICH MATHEOPERATOR ;
-operatorline : MATHEOPERATOR MATHEOPERATOR MATHEOPERATOR;
+zeile  : BUCHSTABEN matheoperator BUCHSTABEN GLEICH BUCHSTABEN -> GLEICH matheoperator ;
+operatorline : matheoperator matheoperator matheoperator;
 
 equalline : GLEICH GLEICH GLEICH;
 
 wort: BUCHSTABEN+ -> ^(WORT BUCHSTABEN+);
 
-all: 	wort1=wort zeichen1=MATHEOPERATOR wort2=wort GLEICH wort3=wort
-		zeichen4=MATHEOPERATOR zeichen5=MATHEOPERATOR zeichen6=MATHEOPERATOR 
-		wort4=wort zeichen2=MATHEOPERATOR wort5=wort GLEICH wort6=wort
+all: 	wort1=wort zeichen1=matheoperator wort2=wort GLEICH wort3=wort
+		zeichen4=matheoperator zeichen5=matheoperator zeichen6=matheoperator 
+		wort4=wort zeichen2=matheoperator wort5=wort GLEICH wort6=wort
 		GLEICH GLEICH GLEICH
-		wort7=wort zeichen3=MATHEOPERATOR wort8=wort GLEICH wort9=wort
+		wort7=wort zeichen3=matheoperator wort8=wort GLEICH wort9=wort
 		->
 		^(SYMBOLPUZZLE 	^(GLEICH ^($zeichen1 $wort1 $wort2) $wort3) 
 						^(GLEICH ^($zeichen5 $wort4 $wort5) $wort6) 
@@ -28,9 +28,11 @@ all: 	wort1=wort zeichen1=MATHEOPERATOR wort2=wort GLEICH wort3=wort
 						^(GLEICH ^($zeichen2 $wort1 $wort4) $wort7) 
 						^(GLEICH ^($zeichen3 $wort2 $wort5) $wort8) 
 						^(GLEICH ^($zeichen4 $wort3 $wort6) $wort9));
+
+matheoperator
+	:	(PLUS | MINUS);						
 		
 BUCHSTABEN : ('A'..'Z');
-MATHEOPERATOR :	PLUS | MINUS;
 PLUS	:	'+';
 MINUS	:	'-';
 GLEICH 	: '=';

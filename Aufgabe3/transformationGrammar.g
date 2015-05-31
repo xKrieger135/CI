@@ -6,6 +6,7 @@ options{output=AST;
 
 
 	
-program 	:	^(SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe);
+puzzle 	:	^(SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe);
 
-aufgabe         :	^(PLUS );	
+aufgabe         :		^(GLEICH ^(PLUS ^(BUCHSTABEN BUCHSTABEN)) BUCHSTABEN)
+		       |	^(GLEICH ^(MINUS wort1=BUCHSTABEN wort2=BUCHSTABEN) wort3=BUCHSTABEN) -> ^(GLEICH ^(PLUS BUCHSTABEN BUCHSTABEN) BUCHSTABEN);	
