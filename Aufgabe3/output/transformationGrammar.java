@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g 2015-05-31 13:55:01
+// $ANTLR 3.4 D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\transformationGrammar.g 2015-06-01 16:38:34
 
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;
@@ -6,11 +6,9 @@ import java.util.Stack;
 import java.util.List;
 import java.util.ArrayList;
 
-import org.antlr.runtime.debug.*;
-import java.io.IOException;
 
 @SuppressWarnings({"all", "warnings", "unchecked"})
-public class transformationGrammar extends DebugTreeParser {
+public class transformationGrammar extends TreeParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "BUCHSTABEN", "GLEICH", "MINUS", "PLUS", "SYMBOLPUZZLE", "WORT"
     };
@@ -31,66 +29,23 @@ public class transformationGrammar extends DebugTreeParser {
     // delegators
 
 
-public static final String[] ruleNames = new String[] {
-    "invalidRule", "puzzle", "aufgabe"
-};
-
-public static final boolean[] decisionCanBacktrack = new boolean[] {
-    false, // invalid decision
-    false
-};
-
- 
-    public int ruleLevel = 0;
-    public int getRuleLevel() { return ruleLevel; }
-    public void incRuleLevel() { ruleLevel++; }
-    public void decRuleLevel() { ruleLevel--; }
     public transformationGrammar(TreeNodeStream input) {
-        this(input, DebugEventSocketProxy.DEFAULT_DEBUGGER_PORT, new RecognizerSharedState());
+        this(input, new RecognizerSharedState());
     }
-    public transformationGrammar(TreeNodeStream input, int port, RecognizerSharedState state) {
+    public transformationGrammar(TreeNodeStream input, RecognizerSharedState state) {
         super(input, state);
-        DebugEventSocketProxy proxy =
-            new DebugEventSocketProxy(this,port,input.getTreeAdaptor());
-        setDebugListener(proxy);
-        setTreeNodeStream(new DebugTreeNodeStream(input,proxy));
-        try {
-            proxy.handshake();
-        }
-        catch (IOException ioe) {
-            reportError(ioe);
-        }
-        TreeAdaptor adap = new CommonTreeAdaptor();
-        setTreeAdaptor(adap);
-        proxy.setTreeAdaptor(adap);
     }
 
-public transformationGrammar(TreeNodeStream input, DebugEventListener dbg) {
-    super(input, dbg);
-     
-    TreeAdaptor adap = new CommonTreeAdaptor();
-    setTreeAdaptor(adap);
+protected TreeAdaptor adaptor = new CommonTreeAdaptor();
 
-
-}
-
-protected boolean evalPredicate(boolean result, String predicate) {
-    dbg.semanticPredicate(result, predicate);
-    return result;
-}
-
-protected DebugTreeAdaptor adaptor;
 public void setTreeAdaptor(TreeAdaptor adaptor) {
-    this.adaptor = new DebugTreeAdaptor(dbg,adaptor);
-
-
+    this.adaptor = adaptor;
 }
 public TreeAdaptor getTreeAdaptor() {
     return adaptor;
 }
-
     public String[] getTokenNames() { return transformationGrammar.tokenNames; }
-    public String getGrammarFileName() { return "C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g"; }
+    public String getGrammarFileName() { return "D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\transformationGrammar.g"; }
 
 
     public static class puzzle_return extends TreeRuleReturnScope {
@@ -100,9 +55,9 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "puzzle"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:9:1: puzzle : ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe ) ;
-    public final transformationGrammar.puzzle_return puzzle() throws RecognitionException {
-        transformationGrammar.puzzle_return retval = new transformationGrammar.puzzle_return();
+    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\transformationGrammar.g:9:1: puzzle : ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe ) ;
+    public final puzzle_return puzzle() throws RecognitionException {
+        puzzle_return retval = new puzzle_return();
         retval.start = input.LT(1);
 
 
@@ -112,42 +67,33 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree _last = null;
 
         CommonTree SYMBOLPUZZLE1=null;
-        transformationGrammar.aufgabe_return aufgabe2 =null;
+        aufgabe_return aufgabe2 =null;
 
-        transformationGrammar.aufgabe_return aufgabe3 =null;
+        aufgabe_return aufgabe3 =null;
 
-        transformationGrammar.aufgabe_return aufgabe4 =null;
+        aufgabe_return aufgabe4 =null;
 
-        transformationGrammar.aufgabe_return aufgabe5 =null;
+        aufgabe_return aufgabe5 =null;
 
-        transformationGrammar.aufgabe_return aufgabe6 =null;
+        aufgabe_return aufgabe6 =null;
 
-        transformationGrammar.aufgabe_return aufgabe7 =null;
+        aufgabe_return aufgabe7 =null;
 
 
         CommonTree SYMBOLPUZZLE1_tree=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "puzzle");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(9, 0);
-
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:9:9: ( ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe ) )
-            dbg.enterAlt(1);
-
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:9:11: ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe )
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\transformationGrammar.g:9:9: ( ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe ) )
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\transformationGrammar.g:9:11: ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe )
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            dbg.location(9,11);
             _last = (CommonTree)input.LT(1);
             {
             CommonTree _save_last_1 = _last;
             CommonTree _first_1 = null;
             CommonTree root_1 = (CommonTree)adaptor.nil();
-            dbg.location(9,13);
             _last = (CommonTree)input.LT(1);
             SYMBOLPUZZLE1=(CommonTree)match(input,SYMBOLPUZZLE,FOLLOW_SYMBOLPUZZLE_in_puzzle38); 
             SYMBOLPUZZLE1_tree = (CommonTree)adaptor.dupNode(SYMBOLPUZZLE1);
@@ -157,7 +103,6 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             match(input, Token.DOWN, null); 
-            dbg.location(9,26);
             _last = (CommonTree)input.LT(1);
             pushFollow(FOLLOW_aufgabe_in_puzzle40);
             aufgabe2=aufgabe();
@@ -166,7 +111,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_1, aufgabe2.getTree());
 
-            dbg.location(9,34);
+
             _last = (CommonTree)input.LT(1);
             pushFollow(FOLLOW_aufgabe_in_puzzle42);
             aufgabe3=aufgabe();
@@ -175,7 +120,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_1, aufgabe3.getTree());
 
-            dbg.location(9,42);
+
             _last = (CommonTree)input.LT(1);
             pushFollow(FOLLOW_aufgabe_in_puzzle44);
             aufgabe4=aufgabe();
@@ -184,7 +129,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_1, aufgabe4.getTree());
 
-            dbg.location(9,50);
+
             _last = (CommonTree)input.LT(1);
             pushFollow(FOLLOW_aufgabe_in_puzzle46);
             aufgabe5=aufgabe();
@@ -193,7 +138,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_1, aufgabe5.getTree());
 
-            dbg.location(9,58);
+
             _last = (CommonTree)input.LT(1);
             pushFollow(FOLLOW_aufgabe_in_puzzle48);
             aufgabe6=aufgabe();
@@ -202,7 +147,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             adaptor.addChild(root_1, aufgabe6.getTree());
 
-            dbg.location(9,66);
+
             _last = (CommonTree)input.LT(1);
             pushFollow(FOLLOW_aufgabe_in_puzzle50);
             aufgabe7=aufgabe();
@@ -231,15 +176,6 @@ public TreeAdaptor getTreeAdaptor() {
         finally {
         	// do for sure before leaving
         }
-        dbg.location(9, 73);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "puzzle");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return retval;
     }
     // $ANTLR end "puzzle"
@@ -252,9 +188,9 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "aufgabe"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:11:1: aufgabe : ( ^( GLEICH ^( PLUS ^( BUCHSTABEN BUCHSTABEN ) ) BUCHSTABEN ) | ^( GLEICH ^( MINUS wort1= BUCHSTABEN wort2= BUCHSTABEN ) wort3= BUCHSTABEN ) -> ^( GLEICH ^( PLUS BUCHSTABEN BUCHSTABEN ) BUCHSTABEN ) );
-    public final transformationGrammar.aufgabe_return aufgabe() throws RecognitionException {
-        transformationGrammar.aufgabe_return retval = new transformationGrammar.aufgabe_return();
+    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\transformationGrammar.g:11:1: aufgabe : ( ^( GLEICH ^( PLUS ^( BUCHSTABEN BUCHSTABEN ) ) BUCHSTABEN ) | ^( GLEICH ^( MINUS wort1= BUCHSTABEN wort2= BUCHSTABEN ) wort3= BUCHSTABEN ) -> ^( GLEICH ^( PLUS BUCHSTABEN BUCHSTABEN ) BUCHSTABEN ) );
+    public final aufgabe_return aufgabe() throws RecognitionException {
+        aufgabe_return retval = new aufgabe_return();
         retval.start = input.LT(1);
 
 
@@ -288,16 +224,9 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleNodeStream stream_GLEICH=new RewriteRuleNodeStream(adaptor,"token GLEICH");
         RewriteRuleNodeStream stream_MINUS=new RewriteRuleNodeStream(adaptor,"token MINUS");
 
-        try { dbg.enterRule(getGrammarFileName(), "aufgabe");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(11, 0);
-
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:11:17: ( ^( GLEICH ^( PLUS ^( BUCHSTABEN BUCHSTABEN ) ) BUCHSTABEN ) | ^( GLEICH ^( MINUS wort1= BUCHSTABEN wort2= BUCHSTABEN ) wort3= BUCHSTABEN ) -> ^( GLEICH ^( PLUS BUCHSTABEN BUCHSTABEN ) BUCHSTABEN ) )
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\transformationGrammar.g:11:17: ( ^( GLEICH ^( PLUS ^( BUCHSTABEN BUCHSTABEN ) ) BUCHSTABEN ) | ^( GLEICH ^( MINUS wort1= BUCHSTABEN wort2= BUCHSTABEN ) wort3= BUCHSTABEN ) -> ^( GLEICH ^( PLUS BUCHSTABEN BUCHSTABEN ) BUCHSTABEN ) )
             int alt1=2;
-            try { dbg.enterDecision(1, decisionCanBacktrack[1]);
-
             int LA1_0 = input.LA(1);
 
             if ( (LA1_0==GLEICH) ) {
@@ -316,7 +245,6 @@ public TreeAdaptor getTreeAdaptor() {
                         NoViableAltException nvae =
                             new NoViableAltException("", 1, 2, input);
 
-                        dbg.recognitionException(nvae);
                         throw nvae;
 
                     }
@@ -325,7 +253,6 @@ public TreeAdaptor getTreeAdaptor() {
                     NoViableAltException nvae =
                         new NoViableAltException("", 1, 1, input);
 
-                    dbg.recognitionException(nvae);
                     throw nvae;
 
                 }
@@ -334,28 +261,21 @@ public TreeAdaptor getTreeAdaptor() {
                 NoViableAltException nvae =
                     new NoViableAltException("", 1, 0, input);
 
-                dbg.recognitionException(nvae);
                 throw nvae;
 
             }
-            } finally {dbg.exitDecision(1);}
-
             switch (alt1) {
                 case 1 :
-                    dbg.enterAlt(1);
-
-                    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:11:20: ^( GLEICH ^( PLUS ^( BUCHSTABEN BUCHSTABEN ) ) BUCHSTABEN )
+                    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\transformationGrammar.g:11:20: ^( GLEICH ^( PLUS ^( BUCHSTABEN BUCHSTABEN ) ) BUCHSTABEN )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    dbg.location(11,20);
                     _last = (CommonTree)input.LT(1);
                     {
                     CommonTree _save_last_1 = _last;
                     CommonTree _first_1 = null;
                     CommonTree root_1 = (CommonTree)adaptor.nil();
-                    dbg.location(11,22);
                     _last = (CommonTree)input.LT(1);
                     GLEICH8=(CommonTree)match(input,GLEICH,FOLLOW_GLEICH_in_aufgabe69); 
                     GLEICH8_tree = (CommonTree)adaptor.dupNode(GLEICH8);
@@ -365,13 +285,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(11,29);
                     _last = (CommonTree)input.LT(1);
                     {
                     CommonTree _save_last_2 = _last;
                     CommonTree _first_2 = null;
                     CommonTree root_2 = (CommonTree)adaptor.nil();
-                    dbg.location(11,31);
                     _last = (CommonTree)input.LT(1);
                     PLUS9=(CommonTree)match(input,PLUS,FOLLOW_PLUS_in_aufgabe72); 
                     PLUS9_tree = (CommonTree)adaptor.dupNode(PLUS9);
@@ -381,13 +299,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(11,36);
                     _last = (CommonTree)input.LT(1);
                     {
                     CommonTree _save_last_3 = _last;
                     CommonTree _first_3 = null;
                     CommonTree root_3 = (CommonTree)adaptor.nil();
-                    dbg.location(11,38);
                     _last = (CommonTree)input.LT(1);
                     BUCHSTABEN10=(CommonTree)match(input,BUCHSTABEN,FOLLOW_BUCHSTABEN_in_aufgabe75); 
                     BUCHSTABEN10_tree = (CommonTree)adaptor.dupNode(BUCHSTABEN10);
@@ -397,7 +313,6 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(11,49);
                     _last = (CommonTree)input.LT(1);
                     BUCHSTABEN11=(CommonTree)match(input,BUCHSTABEN,FOLLOW_BUCHSTABEN_in_aufgabe77); 
                     BUCHSTABEN11_tree = (CommonTree)adaptor.dupNode(BUCHSTABEN11);
@@ -417,7 +332,7 @@ public TreeAdaptor getTreeAdaptor() {
                     _last = _save_last_2;
                     }
 
-                    dbg.location(11,62);
+
                     _last = (CommonTree)input.LT(1);
                     BUCHSTABEN12=(CommonTree)match(input,BUCHSTABEN,FOLLOW_BUCHSTABEN_in_aufgabe81); 
                     BUCHSTABEN12_tree = (CommonTree)adaptor.dupNode(BUCHSTABEN12);
@@ -435,42 +350,35 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    dbg.enterAlt(2);
-
-                    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:12:12: ^( GLEICH ^( MINUS wort1= BUCHSTABEN wort2= BUCHSTABEN ) wort3= BUCHSTABEN )
+                    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\transformationGrammar.g:12:12: ^( GLEICH ^( MINUS wort1= BUCHSTABEN wort2= BUCHSTABEN ) wort3= BUCHSTABEN )
                     {
-                    dbg.location(12,12);
                     _last = (CommonTree)input.LT(1);
                     {
                     CommonTree _save_last_1 = _last;
                     CommonTree _first_1 = null;
                     CommonTree root_1 = (CommonTree)adaptor.nil();
-                    dbg.location(12,14);
                     _last = (CommonTree)input.LT(1);
                     GLEICH13=(CommonTree)match(input,GLEICH,FOLLOW_GLEICH_in_aufgabe96);  
                     stream_GLEICH.add(GLEICH13);
 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(12,21);
                     _last = (CommonTree)input.LT(1);
                     {
                     CommonTree _save_last_2 = _last;
                     CommonTree _first_2 = null;
                     CommonTree root_2 = (CommonTree)adaptor.nil();
-                    dbg.location(12,23);
                     _last = (CommonTree)input.LT(1);
                     MINUS14=(CommonTree)match(input,MINUS,FOLLOW_MINUS_in_aufgabe99);  
                     stream_MINUS.add(MINUS14);
 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(12,34);
                     _last = (CommonTree)input.LT(1);
                     wort1=(CommonTree)match(input,BUCHSTABEN,FOLLOW_BUCHSTABEN_in_aufgabe103);  
                     stream_BUCHSTABEN.add(wort1);
 
-                    dbg.location(12,51);
+
                     _last = (CommonTree)input.LT(1);
                     wort2=(CommonTree)match(input,BUCHSTABEN,FOLLOW_BUCHSTABEN_in_aufgabe107);  
                     stream_BUCHSTABEN.add(wort2);
@@ -481,7 +389,7 @@ public TreeAdaptor getTreeAdaptor() {
                     _last = _save_last_2;
                     }
 
-                    dbg.location(12,69);
+
                     _last = (CommonTree)input.LT(1);
                     wort3=(CommonTree)match(input,BUCHSTABEN,FOLLOW_BUCHSTABEN_in_aufgabe112);  
                     stream_BUCHSTABEN.add(wort3);
@@ -494,7 +402,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     // AST REWRITE
-                    // elements: BUCHSTABEN, BUCHSTABEN, GLEICH, BUCHSTABEN
+                    // elements: BUCHSTABEN, BUCHSTABEN, BUCHSTABEN, GLEICH
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -506,36 +414,31 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (CommonTree)adaptor.nil();
                     // 12:82: -> ^( GLEICH ^( PLUS BUCHSTABEN BUCHSTABEN ) BUCHSTABEN )
                     {
-                        dbg.location(12,85);
-                        // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:12:85: ^( GLEICH ^( PLUS BUCHSTABEN BUCHSTABEN ) BUCHSTABEN )
+                        // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\transformationGrammar.g:12:85: ^( GLEICH ^( PLUS BUCHSTABEN BUCHSTABEN ) BUCHSTABEN )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
-                        dbg.location(12,87);
                         root_1 = (CommonTree)adaptor.becomeRoot(
                         stream_GLEICH.nextNode()
                         , root_1);
 
-                        dbg.location(12,94);
-                        // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:12:94: ^( PLUS BUCHSTABEN BUCHSTABEN )
+                        // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\transformationGrammar.g:12:94: ^( PLUS BUCHSTABEN BUCHSTABEN )
                         {
                         CommonTree root_2 = (CommonTree)adaptor.nil();
-                        dbg.location(12,96);
                         root_2 = (CommonTree)adaptor.becomeRoot(
                         (CommonTree)adaptor.create(PLUS, "PLUS")
                         , root_2);
 
-                        dbg.location(12,101);
                         adaptor.addChild(root_2, 
                         stream_BUCHSTABEN.nextNode()
                         );
-                        dbg.location(12,112);
+
                         adaptor.addChild(root_2, 
                         stream_BUCHSTABEN.nextNode()
                         );
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        dbg.location(12,124);
+
                         adaptor.addChild(root_1, 
                         stream_BUCHSTABEN.nextNode()
                         );
@@ -563,15 +466,6 @@ public TreeAdaptor getTreeAdaptor() {
         finally {
         	// do for sure before leaving
         }
-        dbg.location(12, 134);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "aufgabe");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return retval;
     }
     // $ANTLR end "aufgabe"

@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g 2015-05-31 13:53:28
+// $ANTLR 3.4 D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g 2015-06-01 16:57:26
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -11,16 +11,18 @@ import org.antlr.runtime.tree.*;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class RaetselSmallParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "BUCHSTABEN", "GLEICH", "MINUS", "PLUS", "SYMBOLPUZZLE", "WORT"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "BUCHSTABEN", "GLEICH", "MINUS", "NEWLINE", "PLUS", "SYMBOLPUZZLE", "WORT", "WS"
     };
 
     public static final int EOF=-1;
     public static final int BUCHSTABEN=4;
     public static final int GLEICH=5;
     public static final int MINUS=6;
-    public static final int PLUS=7;
-    public static final int SYMBOLPUZZLE=8;
-    public static final int WORT=9;
+    public static final int NEWLINE=7;
+    public static final int PLUS=8;
+    public static final int SYMBOLPUZZLE=9;
+    public static final int WORT=10;
+    public static final int WS=11;
 
     // delegates
     public Parser[] getDelegates() {
@@ -46,7 +48,7 @@ public TreeAdaptor getTreeAdaptor() {
     return adaptor;
 }
     public String[] getTokenNames() { return RaetselSmallParser.tokenNames; }
-    public String getGrammarFileName() { return "C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g"; }
+    public String getGrammarFileName() { return "D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g"; }
 
 
     public static class start_return extends ParserRuleReturnScope {
@@ -56,21 +58,21 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "start"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:10:1: start : all ;
-    public final RaetselSmallParser.start_return start() throws RecognitionException {
-        RaetselSmallParser.start_return retval = new RaetselSmallParser.start_return();
+    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:10:1: start : all ;
+    public final start_return start() throws RecognitionException {
+        start_return retval = new start_return();
         retval.start = input.LT(1);
 
 
         CommonTree root_0 = null;
 
-        RaetselSmallParser.all_return all1 =null;
+        all_return all1 =null;
 
 
 
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:10:7: ( all )
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:10:9: all
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:10:7: ( all )
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:10:9: all
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -113,29 +115,29 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "old"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:11:1: old : zeile operatorline ! zeile equalline ! zeile ;
-    public final RaetselSmallParser.old_return old() throws RecognitionException {
-        RaetselSmallParser.old_return retval = new RaetselSmallParser.old_return();
+    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:11:1: old : zeile operatorline ! zeile equalline ! zeile ;
+    public final old_return old() throws RecognitionException {
+        old_return retval = new old_return();
         retval.start = input.LT(1);
 
 
         CommonTree root_0 = null;
 
-        RaetselSmallParser.zeile_return zeile2 =null;
+        zeile_return zeile2 =null;
 
-        RaetselSmallParser.operatorline_return operatorline3 =null;
+        operatorline_return operatorline3 =null;
 
-        RaetselSmallParser.zeile_return zeile4 =null;
+        zeile_return zeile4 =null;
 
-        RaetselSmallParser.equalline_return equalline5 =null;
+        equalline_return equalline5 =null;
 
-        RaetselSmallParser.zeile_return zeile6 =null;
+        zeile_return zeile6 =null;
 
 
 
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:11:4: ( zeile operatorline ! zeile equalline ! zeile )
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:11:6: zeile operatorline ! zeile equalline ! zeile
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:11:4: ( zeile operatorline ! zeile equalline ! zeile )
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:11:6: zeile operatorline ! zeile equalline ! zeile
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -204,9 +206,9 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "zeile"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:12:1: zeile : BUCHSTABEN matheoperator BUCHSTABEN GLEICH BUCHSTABEN -> GLEICH matheoperator ;
-    public final RaetselSmallParser.zeile_return zeile() throws RecognitionException {
-        RaetselSmallParser.zeile_return retval = new RaetselSmallParser.zeile_return();
+    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:12:1: zeile : BUCHSTABEN matheoperator BUCHSTABEN GLEICH BUCHSTABEN -> GLEICH matheoperator ;
+    public final zeile_return zeile() throws RecognitionException {
+        zeile_return retval = new zeile_return();
         retval.start = input.LT(1);
 
 
@@ -216,7 +218,7 @@ public TreeAdaptor getTreeAdaptor() {
         Token BUCHSTABEN9=null;
         Token GLEICH10=null;
         Token BUCHSTABEN11=null;
-        RaetselSmallParser.matheoperator_return matheoperator8 =null;
+        matheoperator_return matheoperator8 =null;
 
 
         CommonTree BUCHSTABEN7_tree=null;
@@ -227,8 +229,8 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_GLEICH=new RewriteRuleTokenStream(adaptor,"token GLEICH");
         RewriteRuleSubtreeStream stream_matheoperator=new RewriteRuleSubtreeStream(adaptor,"rule matheoperator");
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:12:8: ( BUCHSTABEN matheoperator BUCHSTABEN GLEICH BUCHSTABEN -> GLEICH matheoperator )
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:12:10: BUCHSTABEN matheoperator BUCHSTABEN GLEICH BUCHSTABEN
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:12:8: ( BUCHSTABEN matheoperator BUCHSTABEN GLEICH BUCHSTABEN -> GLEICH matheoperator )
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:12:10: BUCHSTABEN matheoperator BUCHSTABEN GLEICH BUCHSTABEN
             {
             BUCHSTABEN7=(Token)match(input,BUCHSTABEN,FOLLOW_BUCHSTABEN_in_zeile61);  
             stream_BUCHSTABEN.add(BUCHSTABEN7);
@@ -254,7 +256,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: GLEICH, matheoperator
+            // elements: matheoperator, GLEICH
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -308,25 +310,25 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "operatorline"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:13:1: operatorline : matheoperator matheoperator matheoperator ;
-    public final RaetselSmallParser.operatorline_return operatorline() throws RecognitionException {
-        RaetselSmallParser.operatorline_return retval = new RaetselSmallParser.operatorline_return();
+    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:13:1: operatorline : matheoperator matheoperator matheoperator ;
+    public final operatorline_return operatorline() throws RecognitionException {
+        operatorline_return retval = new operatorline_return();
         retval.start = input.LT(1);
 
 
         CommonTree root_0 = null;
 
-        RaetselSmallParser.matheoperator_return matheoperator12 =null;
+        matheoperator_return matheoperator12 =null;
 
-        RaetselSmallParser.matheoperator_return matheoperator13 =null;
+        matheoperator_return matheoperator13 =null;
 
-        RaetselSmallParser.matheoperator_return matheoperator14 =null;
+        matheoperator_return matheoperator14 =null;
 
 
 
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:13:14: ( matheoperator matheoperator matheoperator )
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:13:16: matheoperator matheoperator matheoperator
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:13:14: ( matheoperator matheoperator matheoperator )
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:13:16: matheoperator matheoperator matheoperator
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -383,9 +385,9 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equalline"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:15:1: equalline : GLEICH GLEICH GLEICH ;
-    public final RaetselSmallParser.equalline_return equalline() throws RecognitionException {
-        RaetselSmallParser.equalline_return retval = new RaetselSmallParser.equalline_return();
+    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:15:1: equalline : GLEICH GLEICH GLEICH ;
+    public final equalline_return equalline() throws RecognitionException {
+        equalline_return retval = new equalline_return();
         retval.start = input.LT(1);
 
 
@@ -400,8 +402,8 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree GLEICH17_tree=null;
 
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:15:11: ( GLEICH GLEICH GLEICH )
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:15:13: GLEICH GLEICH GLEICH
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:15:11: ( GLEICH GLEICH GLEICH )
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:15:13: GLEICH GLEICH GLEICH
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -458,9 +460,9 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "wort"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:17:1: wort : ( BUCHSTABEN )+ -> ^( WORT ( BUCHSTABEN )+ ) ;
-    public final RaetselSmallParser.wort_return wort() throws RecognitionException {
-        RaetselSmallParser.wort_return retval = new RaetselSmallParser.wort_return();
+    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:17:1: wort : ( BUCHSTABEN )+ -> ^( WORT ( BUCHSTABEN )+ ) ;
+    public final wort_return wort() throws RecognitionException {
+        wort_return retval = new wort_return();
         retval.start = input.LT(1);
 
 
@@ -472,10 +474,10 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_BUCHSTABEN=new RewriteRuleTokenStream(adaptor,"token BUCHSTABEN");
 
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:17:5: ( ( BUCHSTABEN )+ -> ^( WORT ( BUCHSTABEN )+ ) )
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:17:7: ( BUCHSTABEN )+
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:17:5: ( ( BUCHSTABEN )+ -> ^( WORT ( BUCHSTABEN )+ ) )
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:17:7: ( BUCHSTABEN )+
             {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:17:7: ( BUCHSTABEN )+
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:17:7: ( BUCHSTABEN )+
             int cnt1=0;
             loop1:
             do {
@@ -489,7 +491,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt1) {
             	case 1 :
-            	    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:17:7: BUCHSTABEN
+            	    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:17:7: BUCHSTABEN
             	    {
             	    BUCHSTABEN18=(Token)match(input,BUCHSTABEN,FOLLOW_BUCHSTABEN_in_wort106);  
             	    stream_BUCHSTABEN.add(BUCHSTABEN18);
@@ -521,7 +523,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (CommonTree)adaptor.nil();
             // 17:19: -> ^( WORT ( BUCHSTABEN )+ )
             {
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:17:22: ^( WORT ( BUCHSTABEN )+ )
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:17:22: ^( WORT ( BUCHSTABEN )+ )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -578,197 +580,245 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "all"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:19:1: all : wort1= wort zeichen1= matheoperator wort2= wort GLEICH wort3= wort zeichen4= matheoperator zeichen5= matheoperator zeichen6= matheoperator wort4= wort zeichen2= matheoperator wort5= wort GLEICH wort6= wort GLEICH GLEICH GLEICH wort7= wort zeichen3= matheoperator wort8= wort GLEICH wort9= wort -> ^( SYMBOLPUZZLE ^( GLEICH ^( $zeichen1 $wort1 $wort2) $wort3) ^( GLEICH ^( $zeichen5 $wort4 $wort5) $wort6) ^( GLEICH ^( $zeichen6 $wort7 $wort8) $wort9) ^( GLEICH ^( $zeichen2 $wort1 $wort4) $wort7) ^( GLEICH ^( $zeichen3 $wort2 $wort5) $wort8) ^( GLEICH ^( $zeichen4 $wort3 $wort6) $wort9) ) ;
-    public final RaetselSmallParser.all_return all() throws RecognitionException {
-        RaetselSmallParser.all_return retval = new RaetselSmallParser.all_return();
+    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:19:1: all : wort1= wort zeichen1= matheoperator wort2= wort GLEICH wort3= wort NEWLINE zeichen4= matheoperator zeichen5= matheoperator zeichen6= matheoperator NEWLINE wort4= wort zeichen2= matheoperator wort5= wort GLEICH wort6= wort NEWLINE GLEICH GLEICH GLEICH NEWLINE wort7= wort zeichen3= matheoperator wort8= wort GLEICH wort9= wort ( NEWLINE )? -> ^( SYMBOLPUZZLE ^( GLEICH ^( $zeichen1 $wort1 $wort2) $wort3) ^( GLEICH ^( $zeichen5 $wort4 $wort5) $wort6) ^( GLEICH ^( $zeichen6 $wort7 $wort8) $wort9) ^( GLEICH ^( $zeichen2 $wort1 $wort4) $wort7) ^( GLEICH ^( $zeichen3 $wort2 $wort5) $wort8) ^( GLEICH ^( $zeichen4 $wort3 $wort6) $wort9) ) ;
+    public final all_return all() throws RecognitionException {
+        all_return retval = new all_return();
         retval.start = input.LT(1);
 
 
         CommonTree root_0 = null;
 
         Token GLEICH19=null;
-        Token GLEICH20=null;
-        Token GLEICH21=null;
+        Token NEWLINE20=null;
+        Token NEWLINE21=null;
         Token GLEICH22=null;
-        Token GLEICH23=null;
+        Token NEWLINE23=null;
         Token GLEICH24=null;
-        RaetselSmallParser.wort_return wort1 =null;
+        Token GLEICH25=null;
+        Token GLEICH26=null;
+        Token NEWLINE27=null;
+        Token GLEICH28=null;
+        Token NEWLINE29=null;
+        wort_return wort1 =null;
 
-        RaetselSmallParser.matheoperator_return zeichen1 =null;
+        matheoperator_return zeichen1 =null;
 
-        RaetselSmallParser.wort_return wort2 =null;
+        wort_return wort2 =null;
 
-        RaetselSmallParser.wort_return wort3 =null;
+        wort_return wort3 =null;
 
-        RaetselSmallParser.matheoperator_return zeichen4 =null;
+        matheoperator_return zeichen4 =null;
 
-        RaetselSmallParser.matheoperator_return zeichen5 =null;
+        matheoperator_return zeichen5 =null;
 
-        RaetselSmallParser.matheoperator_return zeichen6 =null;
+        matheoperator_return zeichen6 =null;
 
-        RaetselSmallParser.wort_return wort4 =null;
+        wort_return wort4 =null;
 
-        RaetselSmallParser.matheoperator_return zeichen2 =null;
+        matheoperator_return zeichen2 =null;
 
-        RaetselSmallParser.wort_return wort5 =null;
+        wort_return wort5 =null;
 
-        RaetselSmallParser.wort_return wort6 =null;
+        wort_return wort6 =null;
 
-        RaetselSmallParser.wort_return wort7 =null;
+        wort_return wort7 =null;
 
-        RaetselSmallParser.matheoperator_return zeichen3 =null;
+        matheoperator_return zeichen3 =null;
 
-        RaetselSmallParser.wort_return wort8 =null;
+        wort_return wort8 =null;
 
-        RaetselSmallParser.wort_return wort9 =null;
+        wort_return wort9 =null;
 
 
         CommonTree GLEICH19_tree=null;
-        CommonTree GLEICH20_tree=null;
-        CommonTree GLEICH21_tree=null;
+        CommonTree NEWLINE20_tree=null;
+        CommonTree NEWLINE21_tree=null;
         CommonTree GLEICH22_tree=null;
-        CommonTree GLEICH23_tree=null;
+        CommonTree NEWLINE23_tree=null;
         CommonTree GLEICH24_tree=null;
+        CommonTree GLEICH25_tree=null;
+        CommonTree GLEICH26_tree=null;
+        CommonTree NEWLINE27_tree=null;
+        CommonTree GLEICH28_tree=null;
+        CommonTree NEWLINE29_tree=null;
+        RewriteRuleTokenStream stream_NEWLINE=new RewriteRuleTokenStream(adaptor,"token NEWLINE");
         RewriteRuleTokenStream stream_GLEICH=new RewriteRuleTokenStream(adaptor,"token GLEICH");
         RewriteRuleSubtreeStream stream_matheoperator=new RewriteRuleSubtreeStream(adaptor,"rule matheoperator");
         RewriteRuleSubtreeStream stream_wort=new RewriteRuleSubtreeStream(adaptor,"rule wort");
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:19:4: (wort1= wort zeichen1= matheoperator wort2= wort GLEICH wort3= wort zeichen4= matheoperator zeichen5= matheoperator zeichen6= matheoperator wort4= wort zeichen2= matheoperator wort5= wort GLEICH wort6= wort GLEICH GLEICH GLEICH wort7= wort zeichen3= matheoperator wort8= wort GLEICH wort9= wort -> ^( SYMBOLPUZZLE ^( GLEICH ^( $zeichen1 $wort1 $wort2) $wort3) ^( GLEICH ^( $zeichen5 $wort4 $wort5) $wort6) ^( GLEICH ^( $zeichen6 $wort7 $wort8) $wort9) ^( GLEICH ^( $zeichen2 $wort1 $wort4) $wort7) ^( GLEICH ^( $zeichen3 $wort2 $wort5) $wort8) ^( GLEICH ^( $zeichen4 $wort3 $wort6) $wort9) ) )
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:19:7: wort1= wort zeichen1= matheoperator wort2= wort GLEICH wort3= wort zeichen4= matheoperator zeichen5= matheoperator zeichen6= matheoperator wort4= wort zeichen2= matheoperator wort5= wort GLEICH wort6= wort GLEICH GLEICH GLEICH wort7= wort zeichen3= matheoperator wort8= wort GLEICH wort9= wort
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:19:4: (wort1= wort zeichen1= matheoperator wort2= wort GLEICH wort3= wort NEWLINE zeichen4= matheoperator zeichen5= matheoperator zeichen6= matheoperator NEWLINE wort4= wort zeichen2= matheoperator wort5= wort GLEICH wort6= wort NEWLINE GLEICH GLEICH GLEICH NEWLINE wort7= wort zeichen3= matheoperator wort8= wort GLEICH wort9= wort ( NEWLINE )? -> ^( SYMBOLPUZZLE ^( GLEICH ^( $zeichen1 $wort1 $wort2) $wort3) ^( GLEICH ^( $zeichen5 $wort4 $wort5) $wort6) ^( GLEICH ^( $zeichen6 $wort7 $wort8) $wort9) ^( GLEICH ^( $zeichen2 $wort1 $wort4) $wort7) ^( GLEICH ^( $zeichen3 $wort2 $wort5) $wort8) ^( GLEICH ^( $zeichen4 $wort3 $wort6) $wort9) ) )
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:19:8: wort1= wort zeichen1= matheoperator wort2= wort GLEICH wort3= wort NEWLINE zeichen4= matheoperator zeichen5= matheoperator zeichen6= matheoperator NEWLINE wort4= wort zeichen2= matheoperator wort5= wort GLEICH wort6= wort NEWLINE GLEICH GLEICH GLEICH NEWLINE wort7= wort zeichen3= matheoperator wort8= wort GLEICH wort9= wort ( NEWLINE )?
             {
-            pushFollow(FOLLOW_wort_in_all126);
+            pushFollow(FOLLOW_wort_in_all127);
             wort1=wort();
 
             state._fsp--;
 
             stream_wort.add(wort1.getTree());
 
-            pushFollow(FOLLOW_matheoperator_in_all130);
+            pushFollow(FOLLOW_matheoperator_in_all131);
             zeichen1=matheoperator();
 
             state._fsp--;
 
             stream_matheoperator.add(zeichen1.getTree());
 
-            pushFollow(FOLLOW_wort_in_all134);
+            pushFollow(FOLLOW_wort_in_all135);
             wort2=wort();
 
             state._fsp--;
 
             stream_wort.add(wort2.getTree());
 
-            GLEICH19=(Token)match(input,GLEICH,FOLLOW_GLEICH_in_all136);  
+            GLEICH19=(Token)match(input,GLEICH,FOLLOW_GLEICH_in_all137);  
             stream_GLEICH.add(GLEICH19);
 
 
-            pushFollow(FOLLOW_wort_in_all140);
+            pushFollow(FOLLOW_wort_in_all141);
             wort3=wort();
 
             state._fsp--;
 
             stream_wort.add(wort3.getTree());
 
-            pushFollow(FOLLOW_matheoperator_in_all146);
+            NEWLINE20=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_all144);  
+            stream_NEWLINE.add(NEWLINE20);
+
+
+            pushFollow(FOLLOW_matheoperator_in_all150);
             zeichen4=matheoperator();
 
             state._fsp--;
 
             stream_matheoperator.add(zeichen4.getTree());
 
-            pushFollow(FOLLOW_matheoperator_in_all150);
+            pushFollow(FOLLOW_matheoperator_in_all154);
             zeichen5=matheoperator();
 
             state._fsp--;
 
             stream_matheoperator.add(zeichen5.getTree());
 
-            pushFollow(FOLLOW_matheoperator_in_all154);
+            pushFollow(FOLLOW_matheoperator_in_all158);
             zeichen6=matheoperator();
 
             state._fsp--;
 
             stream_matheoperator.add(zeichen6.getTree());
 
-            pushFollow(FOLLOW_wort_in_all161);
+            NEWLINE21=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_all161);  
+            stream_NEWLINE.add(NEWLINE21);
+
+
+            pushFollow(FOLLOW_wort_in_all167);
             wort4=wort();
 
             state._fsp--;
 
             stream_wort.add(wort4.getTree());
 
-            pushFollow(FOLLOW_matheoperator_in_all165);
+            pushFollow(FOLLOW_matheoperator_in_all171);
             zeichen2=matheoperator();
 
             state._fsp--;
 
             stream_matheoperator.add(zeichen2.getTree());
 
-            pushFollow(FOLLOW_wort_in_all169);
+            pushFollow(FOLLOW_wort_in_all175);
             wort5=wort();
 
             state._fsp--;
 
             stream_wort.add(wort5.getTree());
 
-            GLEICH20=(Token)match(input,GLEICH,FOLLOW_GLEICH_in_all171);  
-            stream_GLEICH.add(GLEICH20);
+            GLEICH22=(Token)match(input,GLEICH,FOLLOW_GLEICH_in_all177);  
+            stream_GLEICH.add(GLEICH22);
 
 
-            pushFollow(FOLLOW_wort_in_all175);
+            pushFollow(FOLLOW_wort_in_all181);
             wort6=wort();
 
             state._fsp--;
 
             stream_wort.add(wort6.getTree());
 
-            GLEICH21=(Token)match(input,GLEICH,FOLLOW_GLEICH_in_all179);  
-            stream_GLEICH.add(GLEICH21);
+            NEWLINE23=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_all184);  
+            stream_NEWLINE.add(NEWLINE23);
 
 
-            GLEICH22=(Token)match(input,GLEICH,FOLLOW_GLEICH_in_all181);  
-            stream_GLEICH.add(GLEICH22);
+            GLEICH24=(Token)match(input,GLEICH,FOLLOW_GLEICH_in_all188);  
+            stream_GLEICH.add(GLEICH24);
 
 
-            GLEICH23=(Token)match(input,GLEICH,FOLLOW_GLEICH_in_all183);  
-            stream_GLEICH.add(GLEICH23);
+            GLEICH25=(Token)match(input,GLEICH,FOLLOW_GLEICH_in_all193);  
+            stream_GLEICH.add(GLEICH25);
 
 
-            pushFollow(FOLLOW_wort_in_all189);
+            GLEICH26=(Token)match(input,GLEICH,FOLLOW_GLEICH_in_all199);  
+            stream_GLEICH.add(GLEICH26);
+
+
+            NEWLINE27=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_all202);  
+            stream_NEWLINE.add(NEWLINE27);
+
+
+            pushFollow(FOLLOW_wort_in_all208);
             wort7=wort();
 
             state._fsp--;
 
             stream_wort.add(wort7.getTree());
 
-            pushFollow(FOLLOW_matheoperator_in_all193);
+            pushFollow(FOLLOW_matheoperator_in_all212);
             zeichen3=matheoperator();
 
             state._fsp--;
 
             stream_matheoperator.add(zeichen3.getTree());
 
-            pushFollow(FOLLOW_wort_in_all197);
+            pushFollow(FOLLOW_wort_in_all216);
             wort8=wort();
 
             state._fsp--;
 
             stream_wort.add(wort8.getTree());
 
-            GLEICH24=(Token)match(input,GLEICH,FOLLOW_GLEICH_in_all199);  
-            stream_GLEICH.add(GLEICH24);
+            GLEICH28=(Token)match(input,GLEICH,FOLLOW_GLEICH_in_all218);  
+            stream_GLEICH.add(GLEICH28);
 
 
-            pushFollow(FOLLOW_wort_in_all203);
+            pushFollow(FOLLOW_wort_in_all222);
             wort9=wort();
 
             state._fsp--;
 
             stream_wort.add(wort9.getTree());
 
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:23:67: ( NEWLINE )?
+            int alt2=2;
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0==NEWLINE) ) {
+                alt2=1;
+            }
+            switch (alt2) {
+                case 1 :
+                    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:23:67: NEWLINE
+                    {
+                    NEWLINE29=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_all225);  
+                    stream_NEWLINE.add(NEWLINE29);
+
+
+                    }
+                    break;
+
+            }
+
+
             // AST REWRITE
-            // elements: wort7, wort6, zeichen5, GLEICH, wort2, wort7, wort3, wort1, wort4, zeichen6, wort8, GLEICH, wort1, wort3, wort4, GLEICH, wort5, wort9, wort2, zeichen1, zeichen2, wort8, GLEICH, wort9, GLEICH, wort5, GLEICH, zeichen4, wort6, zeichen3
+            // elements: wort1, zeichen4, wort8, zeichen1, wort1, zeichen2, GLEICH, wort9, wort4, wort3, GLEICH, wort8, wort2, wort5, wort3, wort5, wort2, wort9, zeichen5, wort7, GLEICH, wort7, zeichen3, wort4, zeichen6, wort6, GLEICH, wort6, GLEICH, GLEICH
             // token labels: 
-            // rule labels: retval, zeichen1, zeichen3, zeichen2, wort1, wort3, wort2, wort5, wort4, wort7, zeichen5, wort6, zeichen4, wort9, zeichen6, wort8
+            // rule labels: retval, zeichen1, zeichen3, zeichen2, wort1, wort3, wort2, wort5, wort4, zeichen5, wort7, zeichen4, wort6, wort9, wort8, zeichen6
             // token list labels: 
             // rule list labels: 
             // wildcard labels: 
@@ -782,32 +832,32 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_wort2=new RewriteRuleSubtreeStream(adaptor,"rule wort2",wort2!=null?wort2.tree:null);
             RewriteRuleSubtreeStream stream_wort5=new RewriteRuleSubtreeStream(adaptor,"rule wort5",wort5!=null?wort5.tree:null);
             RewriteRuleSubtreeStream stream_wort4=new RewriteRuleSubtreeStream(adaptor,"rule wort4",wort4!=null?wort4.tree:null);
-            RewriteRuleSubtreeStream stream_wort7=new RewriteRuleSubtreeStream(adaptor,"rule wort7",wort7!=null?wort7.tree:null);
             RewriteRuleSubtreeStream stream_zeichen5=new RewriteRuleSubtreeStream(adaptor,"rule zeichen5",zeichen5!=null?zeichen5.tree:null);
-            RewriteRuleSubtreeStream stream_wort6=new RewriteRuleSubtreeStream(adaptor,"rule wort6",wort6!=null?wort6.tree:null);
+            RewriteRuleSubtreeStream stream_wort7=new RewriteRuleSubtreeStream(adaptor,"rule wort7",wort7!=null?wort7.tree:null);
             RewriteRuleSubtreeStream stream_zeichen4=new RewriteRuleSubtreeStream(adaptor,"rule zeichen4",zeichen4!=null?zeichen4.tree:null);
+            RewriteRuleSubtreeStream stream_wort6=new RewriteRuleSubtreeStream(adaptor,"rule wort6",wort6!=null?wort6.tree:null);
             RewriteRuleSubtreeStream stream_wort9=new RewriteRuleSubtreeStream(adaptor,"rule wort9",wort9!=null?wort9.tree:null);
-            RewriteRuleSubtreeStream stream_zeichen6=new RewriteRuleSubtreeStream(adaptor,"rule zeichen6",zeichen6!=null?zeichen6.tree:null);
             RewriteRuleSubtreeStream stream_wort8=new RewriteRuleSubtreeStream(adaptor,"rule wort8",wort8!=null?wort8.tree:null);
+            RewriteRuleSubtreeStream stream_zeichen6=new RewriteRuleSubtreeStream(adaptor,"rule zeichen6",zeichen6!=null?zeichen6.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
             // 24:3: -> ^( SYMBOLPUZZLE ^( GLEICH ^( $zeichen1 $wort1 $wort2) $wort3) ^( GLEICH ^( $zeichen5 $wort4 $wort5) $wort6) ^( GLEICH ^( $zeichen6 $wort7 $wort8) $wort9) ^( GLEICH ^( $zeichen2 $wort1 $wort4) $wort7) ^( GLEICH ^( $zeichen3 $wort2 $wort5) $wort8) ^( GLEICH ^( $zeichen4 $wort3 $wort6) $wort9) )
             {
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:25:3: ^( SYMBOLPUZZLE ^( GLEICH ^( $zeichen1 $wort1 $wort2) $wort3) ^( GLEICH ^( $zeichen5 $wort4 $wort5) $wort6) ^( GLEICH ^( $zeichen6 $wort7 $wort8) $wort9) ^( GLEICH ^( $zeichen2 $wort1 $wort4) $wort7) ^( GLEICH ^( $zeichen3 $wort2 $wort5) $wort8) ^( GLEICH ^( $zeichen4 $wort3 $wort6) $wort9) )
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:25:3: ^( SYMBOLPUZZLE ^( GLEICH ^( $zeichen1 $wort1 $wort2) $wort3) ^( GLEICH ^( $zeichen5 $wort4 $wort5) $wort6) ^( GLEICH ^( $zeichen6 $wort7 $wort8) $wort9) ^( GLEICH ^( $zeichen2 $wort1 $wort4) $wort7) ^( GLEICH ^( $zeichen3 $wort2 $wort5) $wort8) ^( GLEICH ^( $zeichen4 $wort3 $wort6) $wort9) )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
                 (CommonTree)adaptor.create(SYMBOLPUZZLE, "SYMBOLPUZZLE")
                 , root_1);
 
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:25:19: ^( GLEICH ^( $zeichen1 $wort1 $wort2) $wort3)
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:25:19: ^( GLEICH ^( $zeichen1 $wort1 $wort2) $wort3)
                 {
                 CommonTree root_2 = (CommonTree)adaptor.nil();
                 root_2 = (CommonTree)adaptor.becomeRoot(
                 stream_GLEICH.nextNode()
                 , root_2);
 
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:25:28: ^( $zeichen1 $wort1 $wort2)
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:25:28: ^( $zeichen1 $wort1 $wort2)
                 {
                 CommonTree root_3 = (CommonTree)adaptor.nil();
                 root_3 = (CommonTree)adaptor.becomeRoot(stream_zeichen1.nextNode(), root_3);
@@ -824,14 +874,14 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_1, root_2);
                 }
 
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:26:7: ^( GLEICH ^( $zeichen5 $wort4 $wort5) $wort6)
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:26:7: ^( GLEICH ^( $zeichen5 $wort4 $wort5) $wort6)
                 {
                 CommonTree root_2 = (CommonTree)adaptor.nil();
                 root_2 = (CommonTree)adaptor.becomeRoot(
                 stream_GLEICH.nextNode()
                 , root_2);
 
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:26:16: ^( $zeichen5 $wort4 $wort5)
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:26:16: ^( $zeichen5 $wort4 $wort5)
                 {
                 CommonTree root_3 = (CommonTree)adaptor.nil();
                 root_3 = (CommonTree)adaptor.becomeRoot(stream_zeichen5.nextNode(), root_3);
@@ -848,14 +898,14 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_1, root_2);
                 }
 
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:27:7: ^( GLEICH ^( $zeichen6 $wort7 $wort8) $wort9)
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:27:7: ^( GLEICH ^( $zeichen6 $wort7 $wort8) $wort9)
                 {
                 CommonTree root_2 = (CommonTree)adaptor.nil();
                 root_2 = (CommonTree)adaptor.becomeRoot(
                 stream_GLEICH.nextNode()
                 , root_2);
 
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:27:16: ^( $zeichen6 $wort7 $wort8)
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:27:16: ^( $zeichen6 $wort7 $wort8)
                 {
                 CommonTree root_3 = (CommonTree)adaptor.nil();
                 root_3 = (CommonTree)adaptor.becomeRoot(stream_zeichen6.nextNode(), root_3);
@@ -872,14 +922,14 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_1, root_2);
                 }
 
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:28:7: ^( GLEICH ^( $zeichen2 $wort1 $wort4) $wort7)
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:28:7: ^( GLEICH ^( $zeichen2 $wort1 $wort4) $wort7)
                 {
                 CommonTree root_2 = (CommonTree)adaptor.nil();
                 root_2 = (CommonTree)adaptor.becomeRoot(
                 stream_GLEICH.nextNode()
                 , root_2);
 
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:28:16: ^( $zeichen2 $wort1 $wort4)
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:28:16: ^( $zeichen2 $wort1 $wort4)
                 {
                 CommonTree root_3 = (CommonTree)adaptor.nil();
                 root_3 = (CommonTree)adaptor.becomeRoot(stream_zeichen2.nextNode(), root_3);
@@ -896,14 +946,14 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_1, root_2);
                 }
 
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:29:7: ^( GLEICH ^( $zeichen3 $wort2 $wort5) $wort8)
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:29:7: ^( GLEICH ^( $zeichen3 $wort2 $wort5) $wort8)
                 {
                 CommonTree root_2 = (CommonTree)adaptor.nil();
                 root_2 = (CommonTree)adaptor.becomeRoot(
                 stream_GLEICH.nextNode()
                 , root_2);
 
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:29:16: ^( $zeichen3 $wort2 $wort5)
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:29:16: ^( $zeichen3 $wort2 $wort5)
                 {
                 CommonTree root_3 = (CommonTree)adaptor.nil();
                 root_3 = (CommonTree)adaptor.becomeRoot(stream_zeichen3.nextNode(), root_3);
@@ -920,14 +970,14 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_1, root_2);
                 }
 
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:30:7: ^( GLEICH ^( $zeichen4 $wort3 $wort6) $wort9)
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:30:7: ^( GLEICH ^( $zeichen4 $wort3 $wort6) $wort9)
                 {
                 CommonTree root_2 = (CommonTree)adaptor.nil();
                 root_2 = (CommonTree)adaptor.becomeRoot(
                 stream_GLEICH.nextNode()
                 , root_2);
 
-                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:30:16: ^( $zeichen4 $wort3 $wort6)
+                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:30:16: ^( $zeichen4 $wort3 $wort6)
                 {
                 CommonTree root_3 = (CommonTree)adaptor.nil();
                 root_3 = (CommonTree)adaptor.becomeRoot(stream_zeichen4.nextNode(), root_3);
@@ -983,31 +1033,31 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "matheoperator"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:32:1: matheoperator : ( PLUS | MINUS ) ;
-    public final RaetselSmallParser.matheoperator_return matheoperator() throws RecognitionException {
-        RaetselSmallParser.matheoperator_return retval = new RaetselSmallParser.matheoperator_return();
+    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:32:1: matheoperator : ( PLUS | MINUS ) ;
+    public final matheoperator_return matheoperator() throws RecognitionException {
+        matheoperator_return retval = new matheoperator_return();
         retval.start = input.LT(1);
 
 
         CommonTree root_0 = null;
 
-        Token set25=null;
+        Token set30=null;
 
-        CommonTree set25_tree=null;
+        CommonTree set30_tree=null;
 
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:33:2: ( ( PLUS | MINUS ) )
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:33:2: ( ( PLUS | MINUS ) )
+            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            set25=(Token)input.LT(1);
+            set30=(Token)input.LT(1);
 
-            if ( (input.LA(1) >= MINUS && input.LA(1) <= PLUS) ) {
+            if ( input.LA(1)==MINUS||input.LA(1)==PLUS ) {
                 input.consume();
                 adaptor.addChild(root_0, 
-                (CommonTree)adaptor.create(set25)
+                (CommonTree)adaptor.create(set30)
                 );
                 state.errorRecovery=false;
             }
@@ -1046,43 +1096,48 @@ public TreeAdaptor getTreeAdaptor() {
  
 
     public static final BitSet FOLLOW_all_in_start37 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_zeile_in_old43 = new BitSet(new long[]{0x00000000000000C0L});
+    public static final BitSet FOLLOW_zeile_in_old43 = new BitSet(new long[]{0x0000000000000140L});
     public static final BitSet FOLLOW_operatorline_in_old45 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_zeile_in_old48 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_equalline_in_old50 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_zeile_in_old53 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BUCHSTABEN_in_zeile61 = new BitSet(new long[]{0x00000000000000C0L});
+    public static final BitSet FOLLOW_BUCHSTABEN_in_zeile61 = new BitSet(new long[]{0x0000000000000140L});
     public static final BitSet FOLLOW_matheoperator_in_zeile63 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_BUCHSTABEN_in_zeile65 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_GLEICH_in_zeile67 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_BUCHSTABEN_in_zeile69 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_matheoperator_in_operatorline83 = new BitSet(new long[]{0x00000000000000C0L});
-    public static final BitSet FOLLOW_matheoperator_in_operatorline85 = new BitSet(new long[]{0x00000000000000C0L});
+    public static final BitSet FOLLOW_matheoperator_in_operatorline83 = new BitSet(new long[]{0x0000000000000140L});
+    public static final BitSet FOLLOW_matheoperator_in_operatorline85 = new BitSet(new long[]{0x0000000000000140L});
     public static final BitSet FOLLOW_matheoperator_in_operatorline87 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_GLEICH_in_equalline95 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_GLEICH_in_equalline97 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_GLEICH_in_equalline99 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_BUCHSTABEN_in_wort106 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_wort_in_all126 = new BitSet(new long[]{0x00000000000000C0L});
-    public static final BitSet FOLLOW_matheoperator_in_all130 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_wort_in_all134 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_GLEICH_in_all136 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_wort_in_all140 = new BitSet(new long[]{0x00000000000000C0L});
-    public static final BitSet FOLLOW_matheoperator_in_all146 = new BitSet(new long[]{0x00000000000000C0L});
-    public static final BitSet FOLLOW_matheoperator_in_all150 = new BitSet(new long[]{0x00000000000000C0L});
-    public static final BitSet FOLLOW_matheoperator_in_all154 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_wort_in_all161 = new BitSet(new long[]{0x00000000000000C0L});
-    public static final BitSet FOLLOW_matheoperator_in_all165 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_wort_in_all169 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_GLEICH_in_all171 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_wort_in_all127 = new BitSet(new long[]{0x0000000000000140L});
+    public static final BitSet FOLLOW_matheoperator_in_all131 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_wort_in_all135 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_GLEICH_in_all137 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_wort_in_all141 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_NEWLINE_in_all144 = new BitSet(new long[]{0x0000000000000140L});
+    public static final BitSet FOLLOW_matheoperator_in_all150 = new BitSet(new long[]{0x0000000000000140L});
+    public static final BitSet FOLLOW_matheoperator_in_all154 = new BitSet(new long[]{0x0000000000000140L});
+    public static final BitSet FOLLOW_matheoperator_in_all158 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_NEWLINE_in_all161 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_wort_in_all167 = new BitSet(new long[]{0x0000000000000140L});
+    public static final BitSet FOLLOW_matheoperator_in_all171 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_wort_in_all175 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_GLEICH_in_all179 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_GLEICH_in_all181 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_GLEICH_in_all183 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_wort_in_all189 = new BitSet(new long[]{0x00000000000000C0L});
-    public static final BitSet FOLLOW_matheoperator_in_all193 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_wort_in_all197 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_GLEICH_in_all199 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_wort_in_all203 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GLEICH_in_all177 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_wort_in_all181 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_NEWLINE_in_all184 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_GLEICH_in_all188 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_GLEICH_in_all193 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_GLEICH_in_all199 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_NEWLINE_in_all202 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_wort_in_all208 = new BitSet(new long[]{0x0000000000000140L});
+    public static final BitSet FOLLOW_matheoperator_in_all212 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_wort_in_all216 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_GLEICH_in_all218 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_wort_in_all222 = new BitSet(new long[]{0x0000000000000082L});
+    public static final BitSet FOLLOW_NEWLINE_in_all225 = new BitSet(new long[]{0x0000000000000002L});
 
 }
