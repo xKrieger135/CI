@@ -1,4 +1,4 @@
-// $ANTLR 3.4 D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g 2015-06-01 16:57:26
+// $ANTLR 3.4 C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g 2015-06-02 09:31:57
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -30,15 +30,15 @@ public class RaetselSmallLexer extends Lexer {
     public RaetselSmallLexer(CharStream input, RecognizerSharedState state) {
         super(input,state);
     }
-    public String getGrammarFileName() { return "D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g"; }
+    public String getGrammarFileName() { return "C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g"; }
 
     // $ANTLR start "BUCHSTABEN"
     public final void mBUCHSTABEN() throws RecognitionException {
         try {
             int _type = BUCHSTABEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:35:12: ( ( 'A' .. 'Z' ) )
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:35:12: ( ( 'A' .. 'Z' ) )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:
             {
             if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z') ) {
                 input.consume();
@@ -66,8 +66,8 @@ public class RaetselSmallLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:36:6: ( '+' )
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:36:8: '+'
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:36:6: ( '+' )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:36:8: '+'
             {
             match('+'); 
 
@@ -87,8 +87,8 @@ public class RaetselSmallLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:37:7: ( '-' )
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:37:9: '-'
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:37:7: ( '-' )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:37:9: '-'
             {
             match('-'); 
 
@@ -108,8 +108,8 @@ public class RaetselSmallLexer extends Lexer {
         try {
             int _type = GLEICH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:38:9: ( '=' )
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:38:11: '='
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:38:9: ( '=' )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:38:11: '='
             {
             match('='); 
 
@@ -129,8 +129,8 @@ public class RaetselSmallLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:39:4: ( ( ' ' | '\\t' ) )
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:39:6: ( ' ' | '\\t' )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:39:4: ( ( ' ' | '\\t' ) )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:39:6: ( ' ' | '\\t' )
             {
             if ( input.LA(1)=='\t'||input.LA(1)==' ' ) {
                 input.consume();
@@ -160,10 +160,10 @@ public class RaetselSmallLexer extends Lexer {
         try {
             int _type = NEWLINE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:40:9: ( ( '\\r' )? '\\n' )
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:40:11: ( '\\r' )? '\\n'
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:40:9: ( ( '\\r' )? '\\n' )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:40:11: ( '\\r' )? '\\n'
             {
-            // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:40:11: ( '\\r' )?
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:40:11: ( '\\r' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -172,7 +172,7 @@ public class RaetselSmallLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:40:11: '\\r'
+                    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:40:11: '\\r'
                     {
                     match('\r'); 
 
@@ -196,7 +196,7 @@ public class RaetselSmallLexer extends Lexer {
     // $ANTLR end "NEWLINE"
 
     public void mTokens() throws RecognitionException {
-        // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:1:8: ( BUCHSTABEN | PLUS | MINUS | GLEICH | WS | NEWLINE )
+        // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:1:8: ( BUCHSTABEN | PLUS | MINUS | GLEICH | WS | NEWLINE )
         int alt2=6;
         switch ( input.LA(1) ) {
         case 'A':
@@ -266,7 +266,7 @@ public class RaetselSmallLexer extends Lexer {
 
         switch (alt2) {
             case 1 :
-                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:1:10: BUCHSTABEN
+                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:1:10: BUCHSTABEN
                 {
                 mBUCHSTABEN(); 
 
@@ -274,7 +274,7 @@ public class RaetselSmallLexer extends Lexer {
                 }
                 break;
             case 2 :
-                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:1:21: PLUS
+                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:1:21: PLUS
                 {
                 mPLUS(); 
 
@@ -282,7 +282,7 @@ public class RaetselSmallLexer extends Lexer {
                 }
                 break;
             case 3 :
-                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:1:26: MINUS
+                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:1:26: MINUS
                 {
                 mMINUS(); 
 
@@ -290,7 +290,7 @@ public class RaetselSmallLexer extends Lexer {
                 }
                 break;
             case 4 :
-                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:1:32: GLEICH
+                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:1:32: GLEICH
                 {
                 mGLEICH(); 
 
@@ -298,7 +298,7 @@ public class RaetselSmallLexer extends Lexer {
                 }
                 break;
             case 5 :
-                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:1:39: WS
+                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:1:39: WS
                 {
                 mWS(); 
 
@@ -306,7 +306,7 @@ public class RaetselSmallLexer extends Lexer {
                 }
                 break;
             case 6 :
-                // D:\\Uni\\CI\\Praktikum\\CI\\Aufgabe3\\RaetselSmall.g:1:42: NEWLINE
+                // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:1:42: NEWLINE
                 {
                 mNEWLINE(); 
 

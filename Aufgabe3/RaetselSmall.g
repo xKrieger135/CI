@@ -7,20 +7,20 @@ tokens{
 	SYMBOLPUZZLE;
 	WORT;}
 
-start : all;
+start :	all;
 old: zeile operatorline! zeile equalline! zeile;
-zeile  : BUCHSTABEN matheoperator BUCHSTABEN GLEICH BUCHSTABEN -> GLEICH matheoperator ;
-operatorline : matheoperator matheoperator matheoperator;
+zeile  :	BUCHSTABEN matheoperator BUCHSTABEN GLEICH BUCHSTABEN -> GLEICH matheoperator ;
+operatorline :	matheoperator matheoperator matheoperator;
 
-equalline : GLEICH GLEICH GLEICH;
+equalline :	GLEICH GLEICH GLEICH;
 
 wort: BUCHSTABEN+ -> ^(WORT BUCHSTABEN+);
 
-all: 		wort1=wort zeichen1=matheoperator wort2=wort GLEICH wort3=wort		NEWLINE
-		zeichen4=matheoperator zeichen5=matheoperator zeichen6=matheoperator 	NEWLINE
-		wort4=wort zeichen2=matheoperator wort5=wort GLEICH wort6=wort		NEWLINE
-		GLEICH 			GLEICH 				GLEICH		NEWLINE
-		wort7=wort zeichen3=matheoperator wort8=wort GLEICH wort9=wort		NEWLINE?
+all:		wort1=wort zeichen1=matheoperator wort2=wort GLEICH wort3=wort NEWLINE
+		zeichen4=matheoperator zeichen5=matheoperator zeichen6=matheoperator NEWLINE
+		wort4=wort zeichen2=matheoperator wort5=wort GLEICH wort6=wort NEWLINE
+		GLEICH 			GLEICH 				GLEICH NEWLINE
+		wort7=wort zeichen3=matheoperator wort8=wort GLEICH wort9=wort NEWLINE?
 		->
 		^(SYMBOLPUZZLE 	^(GLEICH ^($zeichen1 $wort1 $wort2) $wort3) 
 						^(GLEICH ^($zeichen5 $wort4 $wort5) $wort6) 
@@ -37,5 +37,5 @@ PLUS	:	'+';
 MINUS	:	'-';
 GLEICH 	: '=';
 WS	:	(' '|'\t'){skip();};
-NEWLINE :	'\r'? '\n';
+NEWLINE :	'\r'?'\n';
 

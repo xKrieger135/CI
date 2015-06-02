@@ -4,9 +4,10 @@ options{output=AST;
 	tokenVocab=RaetselSmall;	
 	ASTLabelType=CommonTree;}
 
-
 	
 puzzle 	:	^(SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe);
 
-aufgabe         :		^(GLEICH ^(PLUS ^(BUCHSTABEN BUCHSTABEN)) BUCHSTABEN)
-		       |	^(GLEICH ^(MINUS wort1=BUCHSTABEN wort2=BUCHSTABEN) wort3=BUCHSTABEN) -> ^(GLEICH ^(PLUS BUCHSTABEN BUCHSTABEN) BUCHSTABEN);	
+aufgabe         :		^(GLEICH (^(PLUS wort wort)) wort)
+		       |	^(GLEICH ^(MINUS wort1=wort wort2=wort) wort3=wort) -> ^(GLEICH ^(PLUS $wort1 $wort2) $wort2);	
+		       
+wort	:	^(WORT BUCHSTABEN+);	       
