@@ -1,4 +1,4 @@
-ART + DDE =  FCF
+ART - DDE =  FCF
   +     +      +
  CB + BGE =  BCA
   =     =      =

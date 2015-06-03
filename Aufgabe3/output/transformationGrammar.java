@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g 2015-06-02 09:18:18
+// $ANTLR 3.4 C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g 2015-06-02 09:53:13
 
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;
@@ -58,8 +58,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start "puzzle"
     // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:8:1: puzzle : ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe ) ;
-    public final transformationGrammar.puzzle_return puzzle() throws RecognitionException {
-        transformationGrammar.puzzle_return retval = new transformationGrammar.puzzle_return();
+    public final puzzle_return puzzle() throws RecognitionException {
+        puzzle_return retval = new puzzle_return();
         retval.start = input.LT(1);
 
 
@@ -69,17 +69,17 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree _last = null;
 
         CommonTree SYMBOLPUZZLE1=null;
-        transformationGrammar.aufgabe_return aufgabe2 =null;
+        aufgabe_return aufgabe2 =null;
 
-        transformationGrammar.aufgabe_return aufgabe3 =null;
+        aufgabe_return aufgabe3 =null;
 
-        transformationGrammar.aufgabe_return aufgabe4 =null;
+        aufgabe_return aufgabe4 =null;
 
-        transformationGrammar.aufgabe_return aufgabe5 =null;
+        aufgabe_return aufgabe5 =null;
 
-        transformationGrammar.aufgabe_return aufgabe6 =null;
+        aufgabe_return aufgabe6 =null;
 
-        transformationGrammar.aufgabe_return aufgabe7 =null;
+        aufgabe_return aufgabe7 =null;
 
 
         CommonTree SYMBOLPUZZLE1_tree=null;
@@ -190,9 +190,9 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "aufgabe"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:10:1: aufgabe : ( ^( GLEICH ( ^( PLUS wort wort ) ) wort ) | ^( GLEICH ^( MINUS wort1= wort wort2= wort ) wort3= wort ) -> ^( GLEICH ^( PLUS $wort1 $wort2) $wort2) );
-    public final transformationGrammar.aufgabe_return aufgabe() throws RecognitionException {
-        transformationGrammar.aufgabe_return retval = new transformationGrammar.aufgabe_return();
+    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:10:1: aufgabe : ( ^( GLEICH ( ^( PLUS wort wort ) ) wort ) | ^( GLEICH ^( MINUS wort1= wort wort2= wort ) wort3= wort ) -> ^( GLEICH ^( PLUS[\"+\"] $wort3 $wort2) $wort1) );
+    public final aufgabe_return aufgabe() throws RecognitionException {
+        aufgabe_return retval = new aufgabe_return();
         retval.start = input.LT(1);
 
 
@@ -205,17 +205,17 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree PLUS9=null;
         CommonTree GLEICH13=null;
         CommonTree MINUS14=null;
-        transformationGrammar.wort_return wort1 =null;
+        wort_return wort1 =null;
 
-        transformationGrammar.wort_return wort2 =null;
+        wort_return wort2 =null;
 
-        transformationGrammar.wort_return wort3 =null;
+        wort_return wort3 =null;
 
-        transformationGrammar.wort_return wort10 =null;
+        wort_return wort10 =null;
 
-        transformationGrammar.wort_return wort11 =null;
+        wort_return wort11 =null;
 
-        transformationGrammar.wort_return wort12 =null;
+        wort_return wort12 =null;
 
 
         CommonTree GLEICH8_tree=null;
@@ -226,7 +226,7 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleNodeStream stream_MINUS=new RewriteRuleNodeStream(adaptor,"token MINUS");
         RewriteRuleSubtreeStream stream_wort=new RewriteRuleSubtreeStream(adaptor,"rule wort");
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:10:17: ( ^( GLEICH ( ^( PLUS wort wort ) ) wort ) | ^( GLEICH ^( MINUS wort1= wort wort2= wort ) wort3= wort ) -> ^( GLEICH ^( PLUS $wort1 $wort2) $wort2) )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:10:17: ( ^( GLEICH ( ^( PLUS wort wort ) ) wort ) | ^( GLEICH ^( MINUS wort1= wort wort2= wort ) wort3= wort ) -> ^( GLEICH ^( PLUS[\"+\"] $wort3 $wort2) $wort1) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -409,42 +409,43 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     // AST REWRITE
-                    // elements: GLEICH, wort1, wort2, wort2
+                    // elements: wort3, wort2, GLEICH, wort1
                     // token labels: 
-                    // rule labels: wort1, wort2, retval
+                    // rule labels: wort1, wort3, wort2, retval
                     // token list labels: 
                     // rule list labels: 
                     // wildcard labels: 
                     retval.tree = root_0;
                     RewriteRuleSubtreeStream stream_wort1=new RewriteRuleSubtreeStream(adaptor,"rule wort1",wort1!=null?wort1.tree:null);
+                    RewriteRuleSubtreeStream stream_wort3=new RewriteRuleSubtreeStream(adaptor,"rule wort3",wort3!=null?wort3.tree:null);
                     RewriteRuleSubtreeStream stream_wort2=new RewriteRuleSubtreeStream(adaptor,"rule wort2",wort2!=null?wort2.tree:null);
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 11:64: -> ^( GLEICH ^( PLUS $wort1 $wort2) $wort2)
+                    // 11:64: -> ^( GLEICH ^( PLUS[\"+\"] $wort3 $wort2) $wort1)
                     {
-                        // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:11:67: ^( GLEICH ^( PLUS $wort1 $wort2) $wort2)
+                        // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:11:67: ^( GLEICH ^( PLUS[\"+\"] $wort3 $wort2) $wort1)
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
                         stream_GLEICH.nextNode()
                         , root_1);
 
-                        // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:11:76: ^( PLUS $wort1 $wort2)
+                        // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:11:76: ^( PLUS[\"+\"] $wort3 $wort2)
                         {
                         CommonTree root_2 = (CommonTree)adaptor.nil();
                         root_2 = (CommonTree)adaptor.becomeRoot(
-                        (CommonTree)adaptor.create(PLUS, "PLUS")
+                        (CommonTree)adaptor.create(PLUS, "+")
                         , root_2);
 
-                        adaptor.addChild(root_2, stream_wort1.nextTree());
+                        adaptor.addChild(root_2, stream_wort3.nextTree());
 
                         adaptor.addChild(root_2, stream_wort2.nextTree());
 
                         adaptor.addChild(root_1, root_2);
                         }
 
-                        adaptor.addChild(root_1, stream_wort2.nextTree());
+                        adaptor.addChild(root_1, stream_wort1.nextTree());
 
                         adaptor.addChild(root_0, root_1);
                         }
@@ -482,8 +483,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start "wort"
     // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:13:1: wort : ^( WORT ( BUCHSTABEN )+ ) ;
-    public final transformationGrammar.wort_return wort() throws RecognitionException {
-        transformationGrammar.wort_return retval = new transformationGrammar.wort_return();
+    public final wort_return wort() throws RecognitionException {
+        wort_return retval = new wort_return();
         retval.start = input.LT(1);
 
 
@@ -511,7 +512,7 @@ public TreeAdaptor getTreeAdaptor() {
             CommonTree _first_1 = null;
             CommonTree root_1 = (CommonTree)adaptor.nil();
             _last = (CommonTree)input.LT(1);
-            WORT15=(CommonTree)match(input,WORT,FOLLOW_WORT_in_wort150); 
+            WORT15=(CommonTree)match(input,WORT,FOLLOW_WORT_in_wort151); 
             WORT15_tree = (CommonTree)adaptor.dupNode(WORT15);
 
 
@@ -536,7 +537,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:13:15: BUCHSTABEN
             	    {
             	    _last = (CommonTree)input.LT(1);
-            	    BUCHSTABEN16=(CommonTree)match(input,BUCHSTABEN,FOLLOW_BUCHSTABEN_in_wort152); 
+            	    BUCHSTABEN16=(CommonTree)match(input,BUCHSTABEN,FOLLOW_BUCHSTABEN_in_wort153); 
             	    BUCHSTABEN16_tree = (CommonTree)adaptor.dupNode(BUCHSTABEN16);
 
 
@@ -601,7 +602,7 @@ public TreeAdaptor getTreeAdaptor() {
     public static final BitSet FOLLOW_wort_in_aufgabe102 = new BitSet(new long[]{0x0000000000000400L});
     public static final BitSet FOLLOW_wort_in_aufgabe106 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_wort_in_aufgabe111 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_WORT_in_wort150 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_BUCHSTABEN_in_wort152 = new BitSet(new long[]{0x0000000000000018L});
+    public static final BitSet FOLLOW_WORT_in_wort151 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_BUCHSTABEN_in_wort153 = new BitSet(new long[]{0x0000000000000018L});
 
 }

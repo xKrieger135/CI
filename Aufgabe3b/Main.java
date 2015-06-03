@@ -30,7 +30,7 @@ public class Main {
         IntegerVariable b = makeIntVar("b", 0, 9, Options.V_ENUM);
         IntegerVariable t = makeIntVar("t", 0, 9, Options.V_ENUM);
 
-        // Erstellen von 5 Constraints fuer die Anzahl der Variablen? (DONALD = 5 GERALD = 5, zusammen = 10, deswegen 5 Constraints?)
+        // Erstellen von 5 Uebertraegen fur das loesen der Aufgabe
         IntegerVariable c1 = makeIntVar("c1", 0, 1, Options.V_ENUM);
         IntegerVariable c2 = makeIntVar("c2", 0, 1, Options.V_ENUM);
         IntegerVariable c3 = makeIntVar("c3", 0, 1, Options.V_ENUM);
@@ -57,6 +57,13 @@ public class Main {
 
         // Add constraint name sum
         model.addConstraint(eq(plus(donald, gerald), robert));
+
+        model.addConstraint(eq(plus(d, d), plus(t, mult(c1, 10))));
+        model.addConstraint(eq(plus(plus(l, l), c1), plus(r, mult(c2, 10))));
+        model.addConstraint(eq(plus(plus(a, a), c2), plus(e, mult(c3, 10))));
+        model.addConstraint(eq(plus(plus(n, r), c3), plus(b, mult(c4, 10))));
+        model.addConstraint(eq(plus(plus(o, e), c4), plus(o, mult(c5, 10))));
+        model.addConstraint(eq(plus(plus(d, g), c5), r));
 
         // Add constraint of all different letters.
         model.addConstraint(allDifferent(new IntegerVariable[]{d, o, n, a, l, g, e, r, b, t}));

@@ -59,14 +59,14 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start "start"
     // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:10:1: start : all ;
-    public final RaetselSmallParser.start_return start() throws RecognitionException {
-        RaetselSmallParser.start_return retval = new RaetselSmallParser.start_return();
+    public final start_return start() throws RecognitionException {
+        start_return retval = new start_return();
         retval.start = input.LT(1);
 
 
         CommonTree root_0 = null;
 
-        RaetselSmallParser.all_return all1 =null;
+        all_return all1 =null;
 
 
 
@@ -116,22 +116,22 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start "old"
     // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:11:1: old : zeile operatorline ! zeile equalline ! zeile ;
-    public final RaetselSmallParser.old_return old() throws RecognitionException {
-        RaetselSmallParser.old_return retval = new RaetselSmallParser.old_return();
+    public final old_return old() throws RecognitionException {
+        old_return retval = new old_return();
         retval.start = input.LT(1);
 
 
         CommonTree root_0 = null;
 
-        RaetselSmallParser.zeile_return zeile2 =null;
+        zeile_return zeile2 =null;
 
-        RaetselSmallParser.operatorline_return operatorline3 =null;
+        operatorline_return operatorline3 =null;
 
-        RaetselSmallParser.zeile_return zeile4 =null;
+        zeile_return zeile4 =null;
 
-        RaetselSmallParser.equalline_return equalline5 =null;
+        equalline_return equalline5 =null;
 
-        RaetselSmallParser.zeile_return zeile6 =null;
+        zeile_return zeile6 =null;
 
 
 
@@ -207,8 +207,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start "zeile"
     // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:12:1: zeile : BUCHSTABEN matheoperator BUCHSTABEN GLEICH BUCHSTABEN -> GLEICH matheoperator ;
-    public final RaetselSmallParser.zeile_return zeile() throws RecognitionException {
-        RaetselSmallParser.zeile_return retval = new RaetselSmallParser.zeile_return();
+    public final zeile_return zeile() throws RecognitionException {
+        zeile_return retval = new zeile_return();
         retval.start = input.LT(1);
 
 
@@ -218,7 +218,7 @@ public TreeAdaptor getTreeAdaptor() {
         Token BUCHSTABEN9=null;
         Token GLEICH10=null;
         Token BUCHSTABEN11=null;
-        RaetselSmallParser.matheoperator_return matheoperator8 =null;
+        matheoperator_return matheoperator8 =null;
 
 
         CommonTree BUCHSTABEN7_tree=null;
@@ -311,18 +311,18 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start "operatorline"
     // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:13:1: operatorline : matheoperator matheoperator matheoperator ;
-    public final RaetselSmallParser.operatorline_return operatorline() throws RecognitionException {
-        RaetselSmallParser.operatorline_return retval = new RaetselSmallParser.operatorline_return();
+    public final operatorline_return operatorline() throws RecognitionException {
+        operatorline_return retval = new operatorline_return();
         retval.start = input.LT(1);
 
 
         CommonTree root_0 = null;
 
-        RaetselSmallParser.matheoperator_return matheoperator12 =null;
+        matheoperator_return matheoperator12 =null;
 
-        RaetselSmallParser.matheoperator_return matheoperator13 =null;
+        matheoperator_return matheoperator13 =null;
 
-        RaetselSmallParser.matheoperator_return matheoperator14 =null;
+        matheoperator_return matheoperator14 =null;
 
 
 
@@ -386,8 +386,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start "equalline"
     // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:15:1: equalline : GLEICH GLEICH GLEICH ;
-    public final RaetselSmallParser.equalline_return equalline() throws RecognitionException {
-        RaetselSmallParser.equalline_return retval = new RaetselSmallParser.equalline_return();
+    public final equalline_return equalline() throws RecognitionException {
+        equalline_return retval = new equalline_return();
         retval.start = input.LT(1);
 
 
@@ -461,8 +461,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start "wort"
     // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:17:1: wort : ( BUCHSTABEN )+ -> ^( WORT ( BUCHSTABEN )+ ) ;
-    public final RaetselSmallParser.wort_return wort() throws RecognitionException {
-        RaetselSmallParser.wort_return retval = new RaetselSmallParser.wort_return();
+    public final wort_return wort() throws RecognitionException {
+        wort_return retval = new wort_return();
         retval.start = input.LT(1);
 
 
@@ -581,8 +581,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start "all"
     // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:19:1: all : wort1= wort zeichen1= matheoperator wort2= wort GLEICH wort3= wort NEWLINE zeichen4= matheoperator zeichen5= matheoperator zeichen6= matheoperator NEWLINE wort4= wort zeichen2= matheoperator wort5= wort GLEICH wort6= wort NEWLINE GLEICH GLEICH GLEICH NEWLINE wort7= wort zeichen3= matheoperator wort8= wort GLEICH wort9= wort ( NEWLINE )? -> ^( SYMBOLPUZZLE ^( GLEICH ^( $zeichen1 $wort1 $wort2) $wort3) ^( GLEICH ^( $zeichen5 $wort4 $wort5) $wort6) ^( GLEICH ^( $zeichen6 $wort7 $wort8) $wort9) ^( GLEICH ^( $zeichen2 $wort1 $wort4) $wort7) ^( GLEICH ^( $zeichen3 $wort2 $wort5) $wort8) ^( GLEICH ^( $zeichen4 $wort3 $wort6) $wort9) ) ;
-    public final RaetselSmallParser.all_return all() throws RecognitionException {
-        RaetselSmallParser.all_return retval = new RaetselSmallParser.all_return();
+    public final all_return all() throws RecognitionException {
+        all_return retval = new all_return();
         retval.start = input.LT(1);
 
 
@@ -599,35 +599,35 @@ public TreeAdaptor getTreeAdaptor() {
         Token NEWLINE27=null;
         Token GLEICH28=null;
         Token NEWLINE29=null;
-        RaetselSmallParser.wort_return wort1 =null;
+        wort_return wort1 =null;
 
-        RaetselSmallParser.matheoperator_return zeichen1 =null;
+        matheoperator_return zeichen1 =null;
 
-        RaetselSmallParser.wort_return wort2 =null;
+        wort_return wort2 =null;
 
-        RaetselSmallParser.wort_return wort3 =null;
+        wort_return wort3 =null;
 
-        RaetselSmallParser.matheoperator_return zeichen4 =null;
+        matheoperator_return zeichen4 =null;
 
-        RaetselSmallParser.matheoperator_return zeichen5 =null;
+        matheoperator_return zeichen5 =null;
 
-        RaetselSmallParser.matheoperator_return zeichen6 =null;
+        matheoperator_return zeichen6 =null;
 
-        RaetselSmallParser.wort_return wort4 =null;
+        wort_return wort4 =null;
 
-        RaetselSmallParser.matheoperator_return zeichen2 =null;
+        matheoperator_return zeichen2 =null;
 
-        RaetselSmallParser.wort_return wort5 =null;
+        wort_return wort5 =null;
 
-        RaetselSmallParser.wort_return wort6 =null;
+        wort_return wort6 =null;
 
-        RaetselSmallParser.wort_return wort7 =null;
+        wort_return wort7 =null;
 
-        RaetselSmallParser.matheoperator_return zeichen3 =null;
+        matheoperator_return zeichen3 =null;
 
-        RaetselSmallParser.wort_return wort8 =null;
+        wort_return wort8 =null;
 
-        RaetselSmallParser.wort_return wort9 =null;
+        wort_return wort9 =null;
 
 
         CommonTree GLEICH19_tree=null;
@@ -1034,8 +1034,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start "matheoperator"
     // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\RaetselSmall.g:32:1: matheoperator : ( PLUS | MINUS ) ;
-    public final RaetselSmallParser.matheoperator_return matheoperator() throws RecognitionException {
-        RaetselSmallParser.matheoperator_return retval = new RaetselSmallParser.matheoperator_return();
+    public final matheoperator_return matheoperator() throws RecognitionException {
+        matheoperator_return retval = new matheoperator_return();
         retval.start = input.LT(1);
 
 
