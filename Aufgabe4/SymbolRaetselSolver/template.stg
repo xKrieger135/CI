@@ -2,13 +2,38 @@ group template;
 
 sums(uebergabeConstraint, uebergabeBuchstaben) ::= <<
 
-public class 
+public class SymbolPuzzleSolver {
+    private static Model model = new CPModel();
+	
+    public static void main(String[] args) {
+    
+    	/*
+    	 * Hier wird jeder Buchstabe als Variable deklariert.
+    	 */ 
+        <uebergabeBuchstaben: { buchstabe | IntegerVariable < buchstabe > = Choco.makeIntVar("<letter>", 0, 9, Options.V_ENUM);<\n > }>
+
+	/*
+	 * Prüfe ob alle übergabeBuchstaben verschieden sind. (wie in aufgabe 3b)
+	 */
+        model.addConstraint(Choco.allDifferent( < uebergabeBuchstaben; separator = ", " >));
+        <uebergabeConstraint; seperator = "\n\n" >
+        
+        /*
+         * Erstellen des Solvers. Ebenfalls wird das Model mit den ganzen schmock eingelesen und dann gelöst.
+         */ 
+        Solver s = new CPSolver();
+        s.read(model);
+        s.solve();        
+    }
+}
 
 >>
 
 
 sum(ersteswort, zweiteswort, ergebniswort) ::= <<
-<number1.characters, number2.characters, number3.characters :
-  {n1, n2, n3 | <if(n1)><n1><else>0<endif> + <if(n2)><n2><else>0<endif> = <if(n3)><n3><else>0<endif>;}
-  ; separator="\n">
+	addConstraint(
+        Arrays.asList(<ersteswort.characters; separator=", ">), 
+        Arrays.asList(<zweiteswort.characters; separator=", ">), 
+        Arrays.asList(<ergebniswort.characters; separator=", ">), 
+        );
 >>

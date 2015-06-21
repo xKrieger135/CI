@@ -1,0 +1,1 @@
+https://github.com/Maria-L/BAI4/blob/master/Compiler%20und%20Interpreter/Praktikum%204/grammars/template.stg

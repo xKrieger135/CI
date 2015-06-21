@@ -2,12 +2,13 @@ tree grammar SymbolraetselEmitter;
 
 /*
  * Der SymbolraetselEmitter soll die Symbole einsammeln und speichern
- * Diese Symbole müssen dann später an das Template weitergegeben werden.
+ * Diese Symbole müssen dann später an das Template (sum, sums) weitergegeben werden.
  * Die Constraints müssen wie in Aufgabe 3 auch mit beachtet werden.
  * Als Eingabe kommt ein Symbolraetsel mit 6 Aufgaben, die gelöst werden müssen.
  */
  
 options {
+	language = java;
   	tokenVocab   = RaetselSmall;
   	output       = template;
   	ASTLabelType = CommonTree;
