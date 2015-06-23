@@ -1,0 +1,5 @@
+ART - DDE =  FCF
+  +     +      +
+ CB + BGE =  BCA
+  =     =      =
+AEE + CBG = DGAE

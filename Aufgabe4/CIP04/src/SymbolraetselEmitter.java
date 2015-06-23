@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\SymbolraetselEmitter.g 2015-06-23 16:44:35
+// $ANTLR 3.4 C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\SymbolraetselEmitter.g 2015-06-23 16:09:43
 
 	import java.util.Set;
 	import java.util.HashSet;	
@@ -158,8 +158,8 @@ public static class STAttrMap extends HashMap {
               	retval.buchstaben.addAll((aufgabe5!=null?aufgabe5.gesammelteSymbole:null));
               	retval.buchstaben.addAll((aufgabe6!=null?aufgabe6.gesammelteSymbole:null));
               	
-              	retval.constraints.add((aufgabe1!=null?aufgabe1.st:null).toString());  	  	
              	retval.constraints.add((aufgabe2!=null?aufgabe2.st:null).toString());
+             	retval.constraints.add((aufgabe1!=null?aufgabe1.st:null).toString());  	  	
              	retval.constraints.add((aufgabe3!=null?aufgabe3.st:null).toString());
               	retval.constraints.add((aufgabe4!=null?aufgabe4.st:null).toString());
               	retval.constraints.add((aufgabe5!=null?aufgabe5.st:null).toString());

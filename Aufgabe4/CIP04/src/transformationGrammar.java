@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g 2015-06-23 15:41:41
+// $ANTLR 3.4 C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g 2015-06-23 15:42:13
 
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;
@@ -47,7 +47,7 @@ public TreeAdaptor getTreeAdaptor() {
     return adaptor;
 }
     public String[] getTokenNames() { return transformationGrammar.tokenNames; }
-    public String getGrammarFileName() { return "C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g"; }
+    public String getGrammarFileName() { return "C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g"; }
 
 
     public static class puzzle_return extends TreeRuleReturnScope {
@@ -57,7 +57,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "puzzle"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:8:1: puzzle : ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe ) ;
+    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:8:1: puzzle : ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe ) ;
     public final transformationGrammar.puzzle_return puzzle() throws RecognitionException {
         transformationGrammar.puzzle_return retval = new transformationGrammar.puzzle_return();
         retval.start = input.LT(1);
@@ -85,8 +85,8 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree SYMBOLPUZZLE1_tree=null;
 
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:8:9: ( ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe ) )
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:8:11: ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:8:9: ( ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe ) )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:8:11: ^( SYMBOLPUZZLE aufgabe aufgabe aufgabe aufgabe aufgabe aufgabe )
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -190,7 +190,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "aufgabe"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:10:1: aufgabe : ( ^( GLEICH ( ^( PLUS wort wort ) ) wort ) | ^( GLEICH ^( MINUS wort1= wort wort2= wort ) wort3= wort ) -> ^( GLEICH ^( PLUS[\"+\"] $wort3 $wort2) $wort1) );
+    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:10:1: aufgabe : ( ^( GLEICH ( ^( PLUS wort wort ) ) wort ) | ^( GLEICH ^( MINUS wort1= wort wort2= wort ) wort3= wort ) -> ^( GLEICH ^( PLUS[\"+\"] $wort3 $wort2) $wort1) );
     public final transformationGrammar.aufgabe_return aufgabe() throws RecognitionException {
         transformationGrammar.aufgabe_return retval = new transformationGrammar.aufgabe_return();
         retval.start = input.LT(1);
@@ -226,7 +226,7 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleNodeStream stream_MINUS=new RewriteRuleNodeStream(adaptor,"token MINUS");
         RewriteRuleSubtreeStream stream_wort=new RewriteRuleSubtreeStream(adaptor,"rule wort");
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:10:17: ( ^( GLEICH ( ^( PLUS wort wort ) ) wort ) | ^( GLEICH ^( MINUS wort1= wort wort2= wort ) wort3= wort ) -> ^( GLEICH ^( PLUS[\"+\"] $wort3 $wort2) $wort1) )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:10:17: ( ^( GLEICH ( ^( PLUS wort wort ) ) wort ) | ^( GLEICH ^( MINUS wort1= wort wort2= wort ) wort3= wort ) -> ^( GLEICH ^( PLUS[\"+\"] $wort3 $wort2) $wort1) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -267,7 +267,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt1) {
                 case 1 :
-                    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:10:20: ^( GLEICH ( ^( PLUS wort wort ) ) wort )
+                    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:10:20: ^( GLEICH ( ^( PLUS wort wort ) ) wort )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -286,8 +286,8 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     match(input, Token.DOWN, null); 
-                    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:10:29: ( ^( PLUS wort wort ) )
-                    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:10:30: ^( PLUS wort wort )
+                    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:10:29: ( ^( PLUS wort wort ) )
+                    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:10:30: ^( PLUS wort wort )
                     {
                     _last = (CommonTree)input.LT(1);
                     {
@@ -348,7 +348,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:11:12: ^( GLEICH ^( MINUS wort1= wort wort2= wort ) wort3= wort )
+                    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:11:12: ^( GLEICH ^( MINUS wort1= wort wort2= wort ) wort3= wort )
                     {
                     _last = (CommonTree)input.LT(1);
                     {
@@ -409,7 +409,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     // AST REWRITE
-                    // elements: wort2, wort3, wort1, GLEICH
+                    // elements: wort2, wort1, GLEICH, wort3
                     // token labels: 
                     // rule labels: wort1, wort3, wort2, retval
                     // token list labels: 
@@ -424,14 +424,14 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (CommonTree)adaptor.nil();
                     // 11:64: -> ^( GLEICH ^( PLUS[\"+\"] $wort3 $wort2) $wort1)
                     {
-                        // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:11:67: ^( GLEICH ^( PLUS[\"+\"] $wort3 $wort2) $wort1)
+                        // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:11:67: ^( GLEICH ^( PLUS[\"+\"] $wort3 $wort2) $wort1)
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
                         stream_GLEICH.nextNode()
                         , root_1);
 
-                        // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:11:76: ^( PLUS[\"+\"] $wort3 $wort2)
+                        // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:11:76: ^( PLUS[\"+\"] $wort3 $wort2)
                         {
                         CommonTree root_2 = (CommonTree)adaptor.nil();
                         root_2 = (CommonTree)adaptor.becomeRoot(
@@ -482,7 +482,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "wort"
-    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:13:1: wort : ^( WORT ( BUCHSTABEN )+ ) ;
+    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:13:1: wort : ^( WORT ( BUCHSTABEN )+ ) ;
     public final transformationGrammar.wort_return wort() throws RecognitionException {
         transformationGrammar.wort_return retval = new transformationGrammar.wort_return();
         retval.start = input.LT(1);
@@ -500,8 +500,8 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree BUCHSTABEN16_tree=null;
 
         try {
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:13:6: ( ^( WORT ( BUCHSTABEN )+ ) )
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:13:8: ^( WORT ( BUCHSTABEN )+ )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:13:6: ( ^( WORT ( BUCHSTABEN )+ ) )
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:13:8: ^( WORT ( BUCHSTABEN )+ )
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -520,7 +520,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             match(input, Token.DOWN, null); 
-            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:13:15: ( BUCHSTABEN )+
+            // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:13:15: ( BUCHSTABEN )+
             int cnt2=0;
             loop2:
             do {
@@ -534,7 +534,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt2) {
             	case 1 :
-            	    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe3\\transformationGrammar.g:13:15: BUCHSTABEN
+            	    // C:\\Users\\patrick_steinhauer\\Documents\\GitHub\\CI\\Aufgabe4\\SymbolRaetselSolver\\transformationGrammar.g:13:15: BUCHSTABEN
             	    {
             	    _last = (CommonTree)input.LT(1);
             	    BUCHSTABEN16=(CommonTree)match(input,BUCHSTABEN,FOLLOW_BUCHSTABEN_in_wort153); 

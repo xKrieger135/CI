@@ -8,7 +8,7 @@ tree grammar SymbolraetselEmitter;
  */
  
 options {
-	language = java;
+	language = Java;
   	tokenVocab   = RaetselSmall;
   	output       = template;
   	ASTLabelType = CommonTree;
@@ -38,12 +38,12 @@ puzzle returns [Set<String> buchstaben, Set<String> constraints]
   	$buchstaben.addAll($aufgabe5.gesammelteSymbole);
   	$buchstaben.addAll($aufgabe6.gesammelteSymbole);
   	
-  	$constraints.addAll($aufgabe1.st.toString());  	  	
- 	$constraints.addAll($aufgabe2.st.toString());
- 	$constraints.addAll($aufgabe3.st.toString());
-  	$constraints.addAll($aufgabe4.st.toString());
-  	$constraints.addAll($aufgabe5.st.toString());
-  	$constraints.addAll($aufgabe6.st.toString());
+  	$constraints.add($aufgabe1.st.toString());  	  	
+ 	$constraints.add($aufgabe2.st.toString());
+ 	$constraints.add($aufgabe3.st.toString());
+  	$constraints.add($aufgabe4.st.toString());
+  	$constraints.add($aufgabe5.st.toString());
+  	$constraints.add($aufgabe6.st.toString());
   }
   // Uebergabe der Symbole und constraints
   -> sums(uebergabeConstraint={$constraints}, uebergabeBuchstaben={$buchstaben});
