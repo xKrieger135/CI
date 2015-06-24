@@ -19,9 +19,8 @@ public class Main {
 
 	public static void main(String[] args) throws RecognitionException,
 			FileNotFoundException, IOException {
-		System.out.println(System.getProperty("user.dir")+"\\__Test__input.txt");
-		ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(System.getProperty("user.dir")+"\\__Test__input.txt"));
-		RaetselSmallLexer lexer = new RaetselSmallLexer(input);
+		ANTLRInputStream  input  = new ANTLRInputStream(new FileInputStream(System.getProperty("user.dir")+"\\__Test__input.txt"));
+		RaetselSmallLexer lexer  = new RaetselSmallLexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		
 		RaetselSmallParser parser = new RaetselSmallParser(tokens);
@@ -29,29 +28,38 @@ public class Main {
 		CommonTree treeBeforeNormalisation = (CommonTree) result.getTree();
 		CommonTreeNodeStream nodes = new CommonTreeNodeStream(treeBeforeNormalisation);
 		
-		System.out.println("nach dem parsen");
+		System.out.println("++++++++++++++++++++ Tree before nomalization ++++++++++++++++++++");
+		System.out.println("");
 		System.out.println(treeBeforeNormalisation.toStringTree());
+		System.out.println("");
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		
 		transformationGrammar walker = new transformationGrammar(nodes);
 		CommonTree treeAfterNormalisation = (CommonTree) walker.puzzle().getTree();
+		
+		System.out.println("++++++++++++++++++++ Tree after normalization ++++++++++++++++++++");
+		System.out.println("");
 		System.out.println(treeAfterNormalisation.toStringTree());
+		System.out.println("");
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		
 		CommonTreeNodeStream nodesAfterNormalisation = new CommonTreeNodeStream(treeAfterNormalisation);
 		nodesAfterNormalisation.setTokenStream(tokens);
 		SymbolraetselEmitter normalizer = new SymbolraetselEmitter(nodesAfterNormalisation);
 		
-		System.out.println(TEMPLATE_FILE);
 		
+		// String template file wird hier herein geladen.
 		InputStream templateIs = new FileInputStream(TEMPLATE_FILE);
 		StringTemplateGroup templates = new StringTemplateGroup(new InputStreamReader(templateIs, "ISO-8859-15"), AngleBracketTemplateLexer.class);
 		normalizer.setTemplateLib(templates);
 		SymbolraetselEmitter.puzzle_return ast2 = normalizer.puzzle();
 
 		String output = ast2.getTemplate().toString();
-		System.out.println("\n\nausgabe");
+		System.out.println("++++++++++++++++++++ Output from String Template ++++++++++++++++++++");
+		System.out.println("");
 		System.out.println(output);
-		System.out.println("\n\nnach dem normalisieren");
-		//System.out.println(r2.toStringTree());
+		System.out.println("");
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
 
 //		CommonTreeNodeStream nodes2 = new CommonTreeNodeStream(r2);

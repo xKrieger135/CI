@@ -59,14 +59,14 @@ public class PuzzleSolver {
     	 * Hier wird jeder Buchstabe als Variable deklariert.
     	 */ 
     	 
-        <uebergabeBuchstaben: { buchstabe | IntegerVariable < buchstabe > = Choco.makeIntVar("<letter>", 0, 9, Options.V_ENUM);<\n > }>
+        <uebergabeBuchstaben: { buchstabe | IntegerVariable < buchstabe > = Choco.makeIntVar("<buchstabe>", 0, 9, Options.V_ENUM);<\n> }>
 
 		/*
 		 * Prüfe ob alle übergabeBuchstaben verschieden sind. (wie in aufgabe 3b)
 		 */
 	 
         model.addConstraint(Choco.allDifferent( < uebergabeBuchstaben; separator = ", " >));
-        <uebergabeConstraint; seperator = "\n\n" >
+        <uebergabeConstraint; separator = "\n\n" >
         
         /*
          * Erstellen des Solvers. Ebenfalls wird das Model mit den ganzen schmock eingelesen und dann gelöst.
@@ -74,10 +74,10 @@ public class PuzzleSolver {
          
         Solver s = new CPSolver();
         s.read(model);
-        s.solve();
+        boolean result = s.solve();
         
         if (result) {
-            <uebergabeBuchstaben:{letter| System.out.println("<letter> = " + s.getVar(<letter>).getVal()); <\n>} >
+            <uebergabeBuchstaben:{buchstabe| System.out.println("<buchstabe> = " + s.getVar(<buchstabe>).getVal()); <\n>} >
             
 
         } else {
