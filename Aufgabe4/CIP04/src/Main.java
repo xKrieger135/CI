@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -61,17 +63,8 @@ public class Main {
 		System.out.println("");
 		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
-
-//		CommonTreeNodeStream nodes2 = new CommonTreeNodeStream(r2);
-//		nodes2.setTokenStream(tokens);
-//		SymbolraetselEmitter emitter = new SymbolraetselEmitter(nodes2);
-
-//		SymbolraetselEmitter.puzzle_return puzzle_return = normalizer.puzzle();
-//		String output = puzzle_return.getTemplate().toString();
-//		System.out.println("\n\nausgabe");
-//		System.out.println(output);
-
-
+		// Java File erstellen was auch in der Konsole angezeigt wird wenn man die Main.Java ausführt
+		Files.write(Paths.get(System.getProperty("user.dir") + "\\src\\PuzzleSolver\\PuzzleSolver.java"), output.getBytes());
 
 	}
 

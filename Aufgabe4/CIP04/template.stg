@@ -1,7 +1,7 @@
 group template;
 sums(uebergabeConstraint,uebergabeBuchstaben) ::= <<
 
-package puzzleSolver;
+package PuzzleSolver;
 
 import choco.Choco;
 import choco.Options;
@@ -21,37 +21,47 @@ public class PuzzleSolver {
     private static int getUniqueNo(){
         return uniqueNo++;
     }
-    private static void addEqualsConstraint(Model model, IntegerVariable x, IntegerVariable y, IntegerVariable u_in, IntegerVariable u_out, IntegerVariable z) {
-        model.addConstraint(Choco.eq(Choco.plus(x, Choco.plus(y, u_in)), Choco.plus(z, Choco.mult(u_out, 10))));
+    private static void addEqualsConstraint(Model model, IntegerVariable erstesWortNumber, IntegerVariable zweitesWortNumber, IntegerVariable carryZero, IntegerVariable carryOne, IntegerVariable ergebnisWortNumber) {
+        model.addConstraint(Choco.eq(Choco.plus(erstesWortNumber, Choco.plus(zweitesWortNumber, carryZero)), Choco.plus(ergebnisWortNumber, Choco.mult(carryOne, 10))));
+        System.out.println(ergebnisWortNumber.getName() + " = " + erstesWortNumber.getName() + " + " + zweitesWortNumber.getName());
     }
     
-    private static void addConstraintLine(List\<IntegerVariable> ersteswort, List\<IntegerVariable> zweiteswort, List\<IntegerVariable> ergebniswort){
+    private static void addConstraint(List\<IntegerVariable> ersteswort, List\<IntegerVariable> zweiteswort, List\<IntegerVariable> ergebniswort){
     
-        ListIterator\<IntegerVariable> itErsteswort = ersteswort.listIterator(ersteswort.size());
-        ListIterator\<IntegerVariable> itZweiteswort = zweiteswort.listIterator(zweiteswort.size());
-        ListIterator\<IntegerVariable> itErgebniswort = ergebniswort.listIterator(ergebniswort.size());
-        
         IntegerVariable zero = Choco.makeIntVar("ZERO", 0, 0, Options.V_ENUM);
-        IntegerVariable u_in = zero;
-        IntegerVariable u_out = Choco.makeIntVar("u" + getUniqueNo(), 0, 1, Options.V_ENUM);
+        IntegerVariable carryZero = zero;
+        IntegerVariable carryOne = Choco.makeIntVar("u" + getUniqueNo(), 0, 1, Options.V_ENUM);
         
-        while (itErsteswort.hasPrevious() || itZweiteswort.hasPrevious()){
-            addEqualsConstraint(model, 
-                    itSum1.hasPrevious() ? itSum1.previous() : zero, 
-                    itSum2.hasPrevious() ? itSum2.previous() : zero, 
-                    u_in,
-                    u_out, 
-                    itErg.hasPrevious() ? itErg.previous() : zero
-            );
-            u_in = u_out;
-            u_out = Choco.makeIntVar("u" + getUniqueNo(), 0, 1, Options.V_ENUM);
-        }
+        // Delta Variablen zeigen den Größenunterschied zu dem Ergebnis
+		int delta1 = ergebniswort.size()-ersteswort.size();
+        int delta2 = ergebniswort.size()-zweiteswort.size();
+        int e = ergebniswort.size();
         
-        if(itErg.hasPrevious()){
-            Choco.eq(itErg.previous(), u_in);
+        for(int i = ergebniswort.size()-1; i\>=0; i--) {
+        	// wort.get wird aufgerufen solange das wort noch zeichen hat (von hinten nach vorne)
+        	// Die Deltavariablen sind dazu da um den Index des ergebnisses auf das Wort zu mappen
+        	// Wenn ein wort kein zeichen mehr hat wird zero eingefügt.
+			addEqualsConstraint(model, 
+					ersteswort.size() \< e-i ? zero : ersteswort.get(i-delta1),
+					zweiteswort.size() \< e-i ? zero : zweiteswort.get(i-delta2),
+					carryZero,
+					carryOne,
+					ergebniswort.get(i));
+					
+					carryZero = carryOne;
+        			carryOne = Choco.makeIntVar("u" + getUniqueNo(), 0, 1, Options.V_ENUM);
+					
+		}
+		
+		carryZero = carryOne;
+        carryOne = Choco.makeIntVar("u" + getUniqueNo(), 0, 1, Options.V_ENUM);
+        
+        if((ergebniswort.size() \> ersteswort.size()) || (ergebniswort.size() \> zweiteswort.size())){
+            Choco.eq(ergebniswort.get(0), carryZero);
         }else{
-            Choco.eq(zero, u_in);
+            Choco.eq(zero, carryZero);
         }
+
     }
     public static void main(String[] args) {
         
@@ -81,7 +91,7 @@ public class PuzzleSolver {
             
 
         } else {
-            System.err.println("ERROR!");
+            System.err.println("Couldn't solve this shit! What do you give me there?!");
         }
     }
 }
@@ -90,7 +100,7 @@ public class PuzzleSolver {
 
 sum(ersteswort, zweiteswort, ergebniswort) ::= <<
 
-addConstraintLine(
+addConstraint(
                 Arrays.asList(<ersteswort.characters; separator=", ">), 
                 Arrays.asList(<zweiteswort.characters; separator=", ">),
                 Arrays.asList(<ergebniswort.characters; separator=", ">)

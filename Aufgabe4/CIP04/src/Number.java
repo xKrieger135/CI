@@ -19,4 +19,16 @@ public class Number {
 	public int getSize() {
 		return digits.size();
 	}
+	
+//	private void blubb() {
+//		List<Integer> ergebniswort=new ArrayList<>();
+//		for(int i = ergebniswort.size()-1; i>=0; i--) {
+//			addEqualsConstraint(model, 
+//					ersteswort.size()<i ? zero : ersteswort.get(i),
+//					zweiteswort.size()<i ? zero : zweiteswort.get(i),
+//					u_in,
+//					u_out,
+//					ergebniswort.get(i));
+//		}
+//	}
 }
